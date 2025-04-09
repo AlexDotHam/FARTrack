@@ -1,0 +1,585 @@
+nohup: ignoring input
+/home/baiyifan/.conda/envs/artrack/lib/python3.9/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+script_name: artrackv2_seq.py  config_name: artrackv2_seq_256_full.yaml
+script_name: artrackv2_seq.py  config_name: artrackv2_seq_256_full.yaml
+script_name: artrackv2_seq.py  config_name: artrackv2_seq_256_full.yaml
+script_name: artrackv2_seq.py  config_name: artrackv2_seq_256_full.yaml
+i use vit_large
+i use vit_large
+i use vit_large
+New configuration is shown below.
+MODEL configuration: {'PRETRAIN_FILE': 'mae_tiny_distill_400e.pth.tar', 'PRETRAIN_PTH': '/data5/artrack_tiny_224_distill_6/checkpoints/train/artrackv2_seq/artrackv2_seq_256_full/ARTrackV2Seq_ep0010.pth.tar', 'EXTRA_MERGER': False, 'RETURN_INTER': False, 'RETURN_STAGES': [2, 5, 8, 11], 'DECODER': {'TYPE': 'mask', 'MASK_RATIO': 0.75, 'EMBEDDIM': 512, 'DEPTH': 8, 'NUMHEADS': 16, 'MLPRATIO': 4}, 'BACKBONE': {'TYPE': 'vit_tiny_patch16_224', 'STRIDE': 16, 'PATCHSIZE': 16, 'MID_PE': False, 'SEP_SEG': False, 'CAT_MODE': 'direct', 'MERGE_LAYER': 0, 'ADD_CLS_TOKEN': False, 'CLS_TOKEN_USE_MODE': 'ignore', 'CE_LOC': [], 'CE_KEEP_RATIO': [], 'CE_TEMPLATE_RANGE': 'ALL'}, 'BINS': 300, 'RANGE': 2, 'EXTENSION': 3, 'PRENUM': 3, 'ENCODER_LAYER': 3, 'NUM_HEADS': 12, 'MLP_RATIO': 4, 'QKV_BIAS': True, 'DROP_RATE': 0.1, 'ATTN_DROP': 0.0, 'DROP_PATH': 0.0, 'DECODER_LAYER': 6, 'HEAD': {'TYPE': 'PIX', 'NUM_CHANNELS': 768}}
+
+
+TRAIN configuration: {'LR': 1e-06, 'WEIGHT_DECAY': 0.05, 'EPOCH': 120, 'LR_DROP_EPOCH': 999, 'BATCH_SIZE': 8, 'NUM_WORKER': 12, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 0.0, 'SCORE_WEIGHT': 1.0, 'FREEZE_LAYERS': [0], 'PRINT_INTERVAL': 1, 'VAL_EPOCH_INTERVAL': 10, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'CE_START_EPOCH': 20, 'CE_WARM_EPOCH': 80, 'DROP_PATH_RATE': 0.1, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.05}}
+
+
+DATA configuration: {'MAX_GAP': 300, 'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 200, 'MAX_INTERVAL': 5, 'INTERVAL_PROB': 0.0, 'TEMP': 2, 'TRAIN': {'DATASETS_NAME': ['LASOT', 'GOT10K_vottrain', 'TRACKINGNET', 'VastTrack'], 'DATASETS_RATIO': [1, 1, 1, 1], 'SAMPLE_PER_EPOCH': 1000}, 'VAL': {'DATASETS_NAME': ['GOT10K_official_val'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3, 'SCALE_JITTER': 0.25, 'NUMBER': 32}, 'TEMPLATE': {'NUMBER': 5, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}
+
+
+TEST configuration: {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 5}
+
+
+i use vit_large
+Load pretrained model from: /home/baiyifan/code/pruning/pretrained_models/mae_tiny_distill_400e.pth.tar
+0.75
+Load pretrained model from: /home/baiyifan/code/pruning/pretrained_models/mae_tiny_distill_400e.pth.tar
+Load pretrained model from: /home/baiyifan/code/pruning/pretrained_models/mae_tiny_distill_400e.pth.tar
+0.75
+0.75
+Load pretrained model from: /home/baiyifan/code/pruning/pretrained_models/mae_tiny_distill_400e.pth.tar
+0.75
+Load pretrained model from: /data5/artrack_tiny_224_distill_6/checkpoints/train/artrackv2_seq/artrackv2_seq_256_full/ARTrackV2Seq_ep0010.pth.tar
+[]
+[]
+Load pretrained model from: /data5/artrack_tiny_224_distill_6/checkpoints/train/artrackv2_seq/artrackv2_seq_256_full/ARTrackV2Seq_ep0010.pth.tar
+[]
+[]
+Load pretrained model from: /data5/artrack_tiny_224_distill_6/checkpoints/train/artrackv2_seq/artrackv2_seq_256_full/ARTrackV2Seq_ep0010.pth.tar
+[]
+[]
+Load pretrained model from: /data5/artrack_tiny_224_distill_6/checkpoints/train/artrackv2_seq/artrackv2_seq_256_full/ARTrackV2Seq_ep0010.pth.tar
+[]
+[]
+Learnable parameters are shown below.
+module.identity
+module.backbone.output_bias
+module.backbone.cls_token
+module.backbone.pos_embed
+module.backbone.pos_embed_z
+module.backbone.pos_embed_z0
+module.backbone.pos_embed_z1
+module.backbone.pos_embed_x
+module.backbone.word_embeddings.weight
+module.backbone.position_embeddings.weight
+module.backbone.prev_position_embeddings.weight
+module.backbone.patch_embed.proj.weight
+module.backbone.patch_embed.proj.bias
+module.backbone.blocks.0.norm1.weight
+module.backbone.blocks.0.norm1.bias
+module.backbone.blocks.0.masknorm1.norm.weight
+module.backbone.blocks.0.masknorm1.norm.bias
+module.backbone.blocks.0.attn.qkv.weight
+module.backbone.blocks.0.attn.qkv.bias
+module.backbone.blocks.0.attn.proj.weight
+module.backbone.blocks.0.attn.proj.bias
+module.backbone.blocks.0.norm2.weight
+module.backbone.blocks.0.norm2.bias
+module.backbone.blocks.0.masknorm2.norm.weight
+module.backbone.blocks.0.masknorm2.norm.bias
+module.backbone.blocks.0.mlp.fc1.weight
+module.backbone.blocks.0.mlp.fc1.bias
+module.backbone.blocks.0.mlp.fc2.weight
+module.backbone.blocks.0.mlp.fc2.bias
+module.backbone.blocks.1.norm1.weight
+module.backbone.blocks.1.norm1.bias
+module.backbone.blocks.1.masknorm1.norm.weight
+module.backbone.blocks.1.masknorm1.norm.bias
+module.backbone.blocks.1.attn.qkv.weight
+checkpoints will be saved to /data5/artrack_tiny_224_6_pruning/checkpointsmodule.backbone.blocks.1.attn.qkv.bias
+
+module.backbone.blocks.1.attn.proj.weight
+module.backbone.blocks.1.attn.proj.bias
+module.backbone.blocks.1.norm2.weight
+module.backbone.blocks.1.norm2.bias
+module.backbone.blocks.1.masknorm2.norm.weight
+module.backbone.blocks.1.masknorm2.norm.bias
+module.backbone.blocks.1.mlp.fc1.weight
+module.backbone.blocks.1.mlp.fc1.bias
+module.backbone.blocks.1.mlp.fc2.weight
+module.backbone.blocks.1.mlp.fc2.bias
+module.backbone.blocks.2.norm1.weight
+module.backbone.blocks.2.norm1.bias
+module.backbone.blocks.2.masknorm1.norm.weight
+module.backbone.blocks.2.masknorm1.norm.bias
+module.backbone.blocks.2.attn.qkv.weight
+module.backbone.blocks.2.attn.qkv.bias
+module.backbone.blocks.2.attn.proj.weight
+module.backbone.blocks.2.attn.proj.bias
+module.backbone.blocks.2.norm2.weight
+module.backbone.blocks.2.norm2.bias
+module.backbone.blocks.2.masknorm2.norm.weight
+module.backbone.blocks.2.masknorm2.norm.bias
+module.backbone.blocks.2.mlp.fc1.weight
+module.backbone.blocks.2.mlp.fc1.bias
+module.backbone.blocks.2.mlp.fc2.weight
+module.backbone.blocks.2.mlp.fc2.bias
+module.backbone.blocks.3.norm1.weight
+module.backbone.blocks.3.norm1.bias
+module.backbone.blocks.3.masknorm1.norm.weight
+module.backbone.blocks.3.masknorm1.norm.bias
+module.backbone.blocks.3.attn.qkv.weight
+module.backbone.blocks.3.attn.qkv.bias
+module.backbone.blocks.3.attn.proj.weight
+module.backbone.blocks.3.attn.proj.bias
+module.backbone.blocks.3.norm2.weight
+module.backbone.blocks.3.norm2.bias
+module.backbone.blocks.3.masknorm2.norm.weight
+module.backbone.blocks.3.masknorm2.norm.bias
+module.backbone.blocks.3.mlp.fc1.weight
+module.backbone.blocks.3.mlp.fc1.bias
+module.backbone.blocks.3.mlp.fc2.weight
+module.backbone.blocks.3.mlp.fc2.bias
+module.backbone.blocks.4.norm1.weight
+module.backbone.blocks.4.norm1.bias
+module.backbone.blocks.4.masknorm1.norm.weight
+module.backbone.blocks.4.masknorm1.norm.bias
+module.backbone.blocks.4.attn.qkv.weight
+module.backbone.blocks.4.attn.qkv.bias
+module.backbone.blocks.4.attn.proj.weight
+module.backbone.blocks.4.attn.proj.bias
+module.backbone.blocks.4.norm2.weight
+module.backbone.blocks.4.norm2.bias
+module.backbone.blocks.4.masknorm2.norm.weight
+module.backbone.blocks.4.masknorm2.norm.bias
+module.backbone.blocks.4.mlp.fc1.weight
+module.backbone.blocks.4.mlp.fc1.bias
+module.backbone.blocks.4.mlp.fc2.weight
+module.backbone.blocks.4.mlp.fc2.biascheckpoints will be saved to /data5/artrack_tiny_224_6_pruning/checkpoints
+
+module.backbone.blocks.5.norm1.weight
+module.backbone.blocks.5.norm1.bias
+module.backbone.blocks.5.masknorm1.norm.weight
+module.backbone.blocks.5.masknorm1.norm.bias
+module.backbone.blocks.5.attn.qkv.weight
+module.backbone.blocks.5.attn.qkv.bias
+module.backbone.blocks.5.attn.proj.weight
+module.backbone.blocks.5.attn.proj.bias
+module.backbone.blocks.5.norm2.weight
+module.backbone.blocks.5.norm2.bias
+module.backbone.blocks.5.masknorm2.norm.weight
+module.backbone.blocks.5.masknorm2.norm.bias
+module.backbone.blocks.5.mlp.fc1.weight
+module.backbone.blocks.5.mlp.fc1.bias
+module.backbone.blocks.5.mlp.fc2.weight
+module.backbone.blocks.5.mlp.fc2.bias
+module.backbone.blocks.6.norm1.weight
+module.backbone.blocks.6.norm1.bias
+module.backbone.blocks.6.masknorm1.norm.weight
+module.backbone.blocks.6.masknorm1.norm.bias
+module.backbone.blocks.6.attn.qkv.weight
+module.backbone.blocks.6.attn.qkv.bias
+module.backbone.blocks.6.attn.proj.weight
+module.backbone.blocks.6.attn.proj.bias
+module.backbone.blocks.6.norm2.weight
+module.backbone.blocks.6.norm2.bias
+module.backbone.blocks.6.masknorm2.norm.weight
+module.backbone.blocks.6.masknorm2.norm.bias
+module.backbone.blocks.6.mlp.fc1.weight
+module.backbone.blocks.6.mlp.fc1.bias
+module.backbone.blocks.6.mlp.fc2.weight
+module.backbone.blocks.6.mlp.fc2.bias
+module.backbone.blocks.7.norm1.weight
+module.backbone.blocks.7.norm1.bias
+module.backbone.blocks.7.masknorm1.norm.weight
+module.backbone.blocks.7.masknorm1.norm.bias
+module.backbone.blocks.7.attn.qkv.weight
+module.backbone.blocks.7.attn.qkv.bias
+module.backbone.blocks.7.attn.proj.weight
+module.backbone.blocks.7.attn.proj.bias
+module.backbone.blocks.7.norm2.weight
+module.backbone.blocks.7.norm2.bias
+module.backbone.blocks.7.masknorm2.norm.weight
+module.backbone.blocks.7.masknorm2.norm.bias
+module.backbone.blocks.7.mlp.fc1.weight
+module.backbone.blocks.7.mlp.fc1.bias
+module.backbone.blocks.7.mlp.fc2.weight
+module.backbone.blocks.7.mlp.fc2.bias
+module.backbone.blocks.8.norm1.weight
+module.backbone.blocks.8.norm1.bias
+module.backbone.blocks.8.masknorm1.norm.weight
+module.backbone.blocks.8.masknorm1.norm.bias
+module.backbone.blocks.8.attn.qkv.weight
+module.backbone.blocks.8.attn.qkv.bias
+module.backbone.blocks.8.attn.proj.weight
+module.backbone.blocks.8.attn.proj.bias
+module.backbone.blocks.8.norm2.weight
+module.backbone.blocks.8.norm2.bias
+module.backbone.blocks.8.masknorm2.norm.weight
+module.backbone.blocks.8.masknorm2.norm.bias
+module.backbone.blocks.8.mlp.fc1.weight
+module.backbone.blocks.8.mlp.fc1.bias
+module.backbone.blocks.8.mlp.fc2.weight
+module.backbone.blocks.8.mlp.fc2.bias
+module.backbone.blocks.9.norm1.weight
+module.backbone.blocks.9.norm1.bias
+module.backbone.blocks.9.masknorm1.norm.weight
+module.backbone.blocks.9.masknorm1.norm.bias
+module.backbone.blocks.9.attn.qkv.weight
+module.backbone.blocks.9.attn.qkv.bias
+module.backbone.blocks.9.attn.proj.weight
+module.backbone.blocks.9.attn.proj.bias
+module.backbone.blocks.9.norm2.weight
+module.backbone.blocks.9.norm2.bias
+module.backbone.blocks.9.masknorm2.norm.weight
+module.backbone.blocks.9.masknorm2.norm.bias
+module.backbone.blocks.9.mlp.fc1.weight
+module.backbone.blocks.9.mlp.fc1.bias
+module.backbone.blocks.9.mlp.fc2.weight
+module.backbone.blocks.9.mlp.fc2.bias
+module.backbone.blocks.10.norm1.weight
+module.backbone.blocks.10.norm1.bias
+module.backbone.blocks.10.masknorm1.norm.weight
+module.backbone.blocks.10.masknorm1.norm.bias
+module.backbone.blocks.10.attn.qkv.weight
+module.backbone.blocks.10.attn.qkv.bias
+module.backbone.blocks.10.attn.proj.weight
+module.backbone.blocks.10.attn.proj.bias
+module.backbone.blocks.10.norm2.weight
+module.backbone.blocks.10.norm2.bias
+module.backbone.blocks.10.masknorm2.norm.weight
+module.backbone.blocks.10.masknorm2.norm.bias
+module.backbone.blocks.10.mlp.fc1.weight
+module.backbone.blocks.10.mlp.fc1.bias
+module.backbone.blocks.10.mlp.fc2.weight
+module.backbone.blocks.10.mlp.fc2.bias
+module.backbone.blocks.11.norm1.weight
+module.backbone.blocks.11.norm1.bias
+module.backbone.blocks.11.masknorm1.norm.weight
+module.backbone.blocks.11.masknorm1.norm.bias
+module.backbone.blocks.11.attn.qkv.weight
+module.backbone.blocks.11.attn.qkv.bias
+module.backbone.blocks.11.attn.proj.weight
+module.backbone.blocks.11.attn.proj.bias
+module.backbone.blocks.11.norm2.weight
+module.backbone.blocks.11.norm2.bias
+module.backbone.blocks.11.masknorm2.norm.weight
+module.backbone.blocks.11.masknorm2.norm.bias
+module.backbone.blocks.11.mlp.fc1.weight
+module.backbone.blocks.11.mlp.fc1.bias
+module.backbone.blocks.11.mlp.fc2.weight
+module.backbone.blocks.11.mlp.fc2.bias
+module.backbone.extension.0.norm1.weight
+module.backbone.extension.0.norm1.bias
+module.backbone.extension.0.masknorm1.norm.weight
+module.backbone.extension.0.masknorm1.norm.bias
+module.backbone.extension.0.attn.qkv.weight
+module.backbone.extension.0.attn.qkv.bias
+module.backbone.extension.0.attn.proj.weight
+module.backbone.extension.0.attn.proj.bias
+module.backbone.extension.0.norm2.weight
+module.backbone.extension.0.norm2.bias
+module.backbone.extension.0.masknorm2.norm.weight
+module.backbone.extension.0.masknorm2.norm.bias
+module.backbone.extension.0.mlp.fc1.weight
+module.backbone.extension.0.mlp.fc1.bias
+module.backbone.extension.0.mlp.fc2.weight
+module.backbone.extension.0.mlp.fc2.bias
+module.backbone.extension.1.norm1.weight
+module.backbone.extension.1.norm1.bias
+module.backbone.extension.1.masknorm1.norm.weight
+module.backbone.extension.1.masknorm1.norm.bias
+module.backbone.extension.1.attn.qkv.weight
+module.backbone.extension.1.attn.qkv.bias
+module.backbone.extension.1.attn.proj.weight
+module.backbone.extension.1.attn.proj.bias
+module.backbone.extension.1.norm2.weight
+module.backbone.extension.1.norm2.bias
+module.backbone.extension.1.masknorm2.norm.weight
+module.backbone.extension.1.masknorm2.norm.bias
+module.backbone.extension.1.mlp.fc1.weight
+module.backbone.extension.1.mlp.fc1.bias
+module.backbone.extension.1.mlp.fc2.weight
+module.backbone.extension.1.mlp.fc2.bias
+module.backbone.extension.2.norm1.weight
+module.backbone.extension.2.norm1.bias
+module.backbone.extension.2.masknorm1.norm.weight
+module.backbone.extension.2.masknorm1.norm.bias
+module.backbone.extension.2.attn.qkv.weight
+module.backbone.extension.2.attn.qkv.bias
+module.backbone.extension.2.attn.proj.weight
+module.backbone.extension.2.attn.proj.bias
+module.backbone.extension.2.norm2.weight
+module.backbone.extension.2.norm2.bias
+module.backbone.extension.2.masknorm2.norm.weight
+module.backbone.extension.2.masknorm2.norm.bias
+module.backbone.extension.2.mlp.fc1.weight
+module.backbone.extension.2.mlp.fc1.bias
+module.backbone.extension.2.mlp.fc2.weight
+module.backbone.extension.2.mlp.fc2.bias
+module.backbone.norm.weight
+module.backbone.norm.bias
+move_data True
+No matching checkpoint file found
+checkpoints will be saved to /data5/artrack_tiny_224_6_pruning/checkpoints
+move_data True
+Training with multiple GPUs. checkpoints directory doesn't exist. Create checkpoints directory
+No matching checkpoint file found
+checkpoints will be saved to /data5/artrack_tiny_224_6_pruning/checkpoints
+move_data True
+No matching checkpoint file found
+move_data True
+No matching checkpoint file found
+[train: 1, 1 / 125] FPS: 3.6 (3.6)  ,  DataTime: 30.671 (38.810)  ,  ForwardTime: 2.409  ,  TotalTime: 71.891  ,  Loss/total: 0.81319  ,  Loss/giou: 0.40660  ,  Loss/l1: 0.03984  ,  Loss/location: 3.52995  ,  IoU: 0.63721  ,  grad_norm: 17.53791  ,  mIoU: 0.65457  ,  mIoU10: 0.65457  ,  mIoU100: 0.65457
+[train: 1, 1 / 125] FPS: 3.6 (3.6)  ,  DataTime: 16.616 (36.770)  ,  ForwardTime: 18.506  ,  TotalTime: 71.892  ,  Loss/total: 0.35465  ,  Loss/giou: 0.17732  ,  Loss/l1: 0.01423  ,  Loss/location: 2.81182  ,  IoU: 0.82616  ,  grad_norm: 17.53791  ,  mIoU: 0.84038  ,  mIoU10: 0.84038  ,  mIoU100: 0.84038
+[train: 1, 1 / 125] FPS: 3.6 (3.6)  ,  DataTime: 8.298 (34.556)  ,  ForwardTime: 29.035  ,  TotalTime: 71.889  ,  Loss/total: 0.57539  ,  Loss/giou: 0.28770  ,  Loss/l1: 0.02339  ,  Loss/location: 3.41046  ,  IoU: 0.73053  ,  grad_norm: 17.53791  ,  mIoU: 0.73794  ,  mIoU10: 0.73794  ,  mIoU100: 0.73794
+[train: 1, 1 / 125] FPS: 3.6 (3.6)  ,  DataTime: 29.670 (40.625)  ,  ForwardTime: 1.594  ,  TotalTime: 71.889  ,  Loss/total: 0.43917  ,  Loss/giou: 0.21959  ,  Loss/l1: 0.01691  ,  Loss/location: 2.88649  ,  IoU: 0.78722  ,  grad_norm: 17.53791  ,  mIoU: 0.80112  ,  mIoU10: 0.80112  ,  mIoU100: 0.80112
+[train: 1, 2 / 125] FPS: 4.7 (7.0)  ,  DataTime: 4.184 (33.277)  ,  ForwardTime: 16.661  ,  TotalTime: 54.123  ,  Loss/total: 0.50039  ,  Loss/giou: 0.25020  ,  Loss/l1: 0.02044  ,  Loss/location: 3.23436  ,  IoU: 0.76183  ,  grad_norm: 16.16545  ,  mIoU: 0.76409  ,  mIoU10: 0.75102  ,  mIoU100: 0.75102
+[train: 1, 2 / 125] FPS: 4.7 (7.0)  ,  DataTime: 14.884 (37.614)  ,  ForwardTime: 1.630  ,  TotalTime: 54.127  ,  Loss/total: 0.59514  ,  Loss/giou: 0.29757  ,  Loss/l1: 0.04964  ,  Loss/location: 3.26866  ,  IoU: 0.74046  ,  grad_norm: 16.16545  ,  mIoU: 0.75913  ,  mIoU10: 0.78012  ,  mIoU100: 0.78012
+[train: 1, 2 / 125] FPS: 4.7 (7.0)  ,  DataTime: 15.387 (34.838)  ,  ForwardTime: 3.905  ,  TotalTime: 54.130  ,  Loss/total: 0.69587  ,  Loss/giou: 0.34793  ,  Loss/l1: 0.03618  ,  Loss/location: 3.39653  ,  IoU: 0.68594  ,  grad_norm: 16.16545  ,  mIoU: 0.69704  ,  mIoU10: 0.67580  ,  mIoU100: 0.67580
+[train: 1, 2 / 125] FPS: 4.7 (7.0)  ,  DataTime: 8.356 (35.725)  ,  ForwardTime: 10.049  ,  TotalTime: 54.130  ,  Loss/total: 0.47008  ,  Loss/giou: 0.23504  ,  Loss/l1: 0.02144  ,  Loss/location: 3.02923  ,  IoU: 0.77764  ,  grad_norm: 16.16545  ,  mIoU: 0.78567  ,  mIoU10: 0.81303  ,  mIoU100: 0.81303
+[train: 1, 3 / 125] FPS: 5.2 (6.5)  ,  DataTime: 10.284 (34.558)  ,  ForwardTime: 4.422  ,  TotalTime: 49.264  ,  Loss/total: 0.60702  ,  Loss/giou: 0.30351  ,  Loss/l1: 0.02918  ,  Loss/location: 3.23134  ,  IoU: 0.72166  ,  grad_norm: 16.49026  ,  mIoU: 0.73113  ,  mIoU10: 0.69425  ,  mIoU100: 0.69425
+[train: 1, 3 / 125] FPS: 5.2 (6.5)  ,  DataTime: 3.440 (33.964)  ,  ForwardTime: 11.860  ,  TotalTime: 49.263  ,  Loss/total: 0.44436  ,  Loss/giou: 0.22218  ,  Loss/l1: 0.01755  ,  Loss/location: 3.04037  ,  IoU: 0.78716  ,  grad_norm: 16.49026  ,  mIoU: 0.78983  ,  mIoU10: 0.76396  ,  mIoU100: 0.76396
+[train: 1, 3 / 125] FPS: 5.2 (6.5)  ,  DataTime: 5.601 (34.897)  ,  ForwardTime: 8.767  ,  TotalTime: 49.264  ,  Loss/total: 0.49021  ,  Loss/giou: 0.24511  ,  Loss/l1: 0.02438  ,  Loss/location: 3.05989  ,  IoU: 0.76950  ,  grad_norm: 16.49026  ,  mIoU: 0.77457  ,  mIoU10: 0.80021  ,  mIoU100: 0.80021
+[train: 1, 3 / 125] FPS: 5.2 (6.5)  ,  DataTime: 9.953 (37.692)  ,  ForwardTime: 1.618  ,  TotalTime: 49.263  ,  Loss/total: 0.68122  ,  Loss/giou: 0.34061  ,  Loss/l1: 0.04813  ,  Loss/location: 3.45881  ,  IoU: 0.70267  ,  grad_norm: 16.49026  ,  mIoU: 0.72010  ,  mIoU10: 0.76012  ,  mIoU100: 0.76012
+[train: 1, 4 / 125] FPS: 5.3 (5.7)  ,  DataTime: 7.735 (34.356)  ,  ForwardTime: 6.128  ,  TotalTime: 48.220  ,  Loss/total: 0.54354  ,  Loss/giou: 0.27177  ,  Loss/l1: 0.02514  ,  Loss/location: 3.11207  ,  IoU: 0.74836  ,  grad_norm: 16.05742  ,  mIoU: 0.75775  ,  mIoU10: 0.71012  ,  mIoU100: 0.71012
+[train: 1, 4 / 125] FPS: 5.3 (5.7)  ,  DataTime: 2.929 (34.242)  ,  ForwardTime: 11.048  ,  TotalTime: 48.219  ,  Loss/total: 0.42077  ,  Loss/giou: 0.21039  ,  Loss/l1: 0.01639  ,  Loss/location: 2.96660  ,  IoU: 0.79746  ,  grad_norm: 16.05742  ,  mIoU: 0.80500  ,  mIoU10: 0.77422  ,  mIoU100: 0.77422
+[train: 1, 4 / 125] FPS: 5.3 (5.7)  ,  DataTime: 6.037 (35.213)  ,  ForwardTime: 6.970  ,  TotalTime: 48.220  ,  Loss/total: 0.55555  ,  Loss/giou: 0.27777  ,  Loss/l1: 0.03612  ,  Loss/location: 3.25647  ,  IoU: 0.74533  ,  grad_norm: 16.05742  ,  mIoU: 0.75221  ,  mIoU10: 0.78821  ,  mIoU100: 0.78821
+[train: 1, 4 / 125] FPS: 5.3 (5.7)  ,  DataTime: 7.485 (37.102)  ,  ForwardTime: 3.632  ,  TotalTime: 48.219  ,  Loss/total: 0.60066  ,  Loss/giou: 0.30033  ,  Loss/l1: 0.03918  ,  Loss/location: 3.27443  ,  IoU: 0.73305  ,  grad_norm: 16.05742  ,  mIoU: 0.74609  ,  mIoU10: 0.75661  ,  mIoU100: 0.75661
+[train: 1, 5 / 125] FPS: 5.4 (5.7)  ,  DataTime: 6.006 (36.987)  ,  ForwardTime: 4.494  ,  TotalTime: 47.487  ,  Loss/total: 0.61173  ,  Loss/giou: 0.30587  ,  Loss/l1: 0.03684  ,  Loss/location: 3.29666  ,  IoU: 0.72573  ,  grad_norm: 17.07996  ,  mIoU: 0.73563  ,  mIoU10: 0.75241  ,  mIoU100: 0.75241[train: 1, 5 / 125] FPS: 5.4 (5.7)  ,  DataTime: 6.207 (33.864)  ,  ForwardTime: 7.417  ,  TotalTime: 47.488  ,  Loss/total: 0.56796  ,  Loss/giou: 0.28398  ,  Loss/l1: 0.03419  ,  Loss/location: 3.22399  ,  IoU: 0.74322  ,  grad_norm: 17.07996  ,  mIoU: 0.75149  ,  mIoU10: 0.71840  ,  mIoU100: 0.71840
+
+[train: 1, 5 / 125] FPS: 5.4 (5.7)  ,  DataTime: 2.616 (34.647)  ,  ForwardTime: 10.225  ,  TotalTime: 47.488  ,  Loss/total: 0.41617  ,  Loss/giou: 0.20808  ,  Loss/l1: 0.01616  ,  Loss/location: 2.95583  ,  IoU: 0.80015  ,  grad_norm: 17.07996  ,  mIoU: 0.80835  ,  mIoU10: 0.78104  ,  mIoU100: 0.78104
+[train: 1, 5 / 125] FPS: 5.4 (5.7)  ,  DataTime: 5.621 (35.967)  ,  ForwardTime: 5.901  ,  TotalTime: 47.488  ,  Loss/total: 0.51570  ,  Loss/giou: 0.25785  ,  Loss/l1: 0.03152  ,  Loss/location: 3.12332  ,  IoU: 0.76152  ,  grad_norm: 17.07996  ,  mIoU: 0.76676  ,  mIoU10: 0.78392  ,  mIoU100: 0.78392
+[train: 1, 6 / 125] FPS: 5.6 (6.7)  ,  DataTime: 5.021 (36.540)  ,  ForwardTime: 4.428  ,  TotalTime: 45.989  ,  Loss/total: 0.56491  ,  Loss/giou: 0.28245  ,  Loss/l1: 0.03284  ,  Loss/location: 3.18157  ,  IoU: 0.74447  ,  grad_norm: 16.55697  ,  mIoU: 0.75440  ,  mIoU10: 0.75274  ,  mIoU100: 0.75274
+[train: 1, 6 / 125] FPS: 5.6 (6.6)  ,  DataTime: 5.187 (33.733)  ,  ForwardTime: 7.070  ,  TotalTime: 45.990  ,  Loss/total: 0.55463  ,  Loss/giou: 0.27731  ,  Loss/l1: 0.03176  ,  Loss/location: 3.21837  ,  IoU: 0.74646  ,  grad_norm: 16.55697  ,  mIoU: 0.75405  ,  mIoU10: 0.72434  ,  mIoU100: 0.72434
+[train: 1, 6 / 125] FPS: 5.6 (6.6)  ,  DataTime: 2.449 (34.755)  ,  ForwardTime: 8.785  ,  TotalTime: 45.989  ,  Loss/total: 0.42170  ,  Loss/giou: 0.21085  ,  Loss/l1: 0.01841  ,  Loss/location: 2.97231  ,  IoU: 0.79869  ,  grad_norm: 16.55697  ,  mIoU: 0.80650  ,  mIoU10: 0.78529  ,  mIoU100: 0.78529
+[train: 1, 6 / 125] FPS: 5.6 (6.6)  ,  DataTime: 4.703 (35.714)  ,  ForwardTime: 5.573  ,  TotalTime: 45.990  ,  Loss/total: 0.56596  ,  Loss/giou: 0.28298  ,  Loss/l1: 0.03505  ,  Loss/location: 3.24613  ,  IoU: 0.74048  ,  grad_norm: 16.55697  ,  mIoU: 0.74597  ,  mIoU10: 0.77759  ,  mIoU100: 0.77759
+[train: 1, 7 / 125] FPS: 5.6 (5.7)  ,  DataTime: 4.316 (36.408)  ,  ForwardTime: 5.124  ,  TotalTime: 45.848  ,  Loss/total: 0.55367  ,  Loss/giou: 0.27683  ,  Loss/l1: 0.03082  ,  Loss/location: 3.18084  ,  IoU: 0.74717  ,  grad_norm: 16.22612  ,  mIoU: 0.75743  ,  mIoU10: 0.75341  ,  mIoU100: 0.75341
+[train: 1, 7 / 125] FPS: 5.6 (5.7)  ,  DataTime: 4.459 (33.756)  ,  ForwardTime: 7.633  ,  TotalTime: 45.848  ,  Loss/total: 0.61654  ,  Loss/giou: 0.30827  ,  Loss/l1: 0.03914  ,  Loss/location: 3.37510  ,  IoU: 0.72259  ,  grad_norm: 16.22612  ,  mIoU: 0.73196  ,  mIoU10: 0.72543  ,  mIoU100: 0.72543
+[train: 1, 7 / 125] FPS: 5.6 (5.7)  ,  DataTime: 2.904 (35.188)  ,  ForwardTime: 7.756  ,  TotalTime: 45.848  ,  Loss/total: 0.40636  ,  Loss/giou: 0.20318  ,  Loss/l1: 0.01731  ,  Loss/location: 2.92579  ,  IoU: 0.80534  ,  grad_norm: 16.22612  ,  mIoU: 0.81421  ,  mIoU10: 0.78942  ,  mIoU100: 0.78942
+[train: 1, 7 / 125] FPS: 5.6 (5.7)  ,  DataTime: 4.044 (35.703)  ,  ForwardTime: 6.101  ,  TotalTime: 45.848  ,  Loss/total: 0.57895  ,  Loss/giou: 0.28948  ,  Loss/l1: 0.03672  ,  Loss/location: 3.28086  ,  IoU: 0.73459  ,  grad_norm: 16.22612  ,  mIoU: 0.73953  ,  mIoU10: 0.77216  ,  mIoU100: 0.77216
+[train: 1, 8 / 125] FPS: 5.6 (5.5)  ,  DataTime: 3.788 (36.215)  ,  ForwardTime: 5.890  ,  TotalTime: 45.893  ,  Loss/total: 0.54148  ,  Loss/giou: 0.27074  ,  Loss/l1: 0.02938  ,  Loss/location: 3.19768  ,  IoU: 0.75092  ,  grad_norm: 15.97852  ,  mIoU: 0.76099  ,  mIoU10: 0.75436  ,  mIoU100: 0.75436
+[train: 1, 8 / 125] FPS: 5.6 (5.5)  ,  DataTime: 3.158 (35.754)  ,  ForwardTime: 6.981  ,  TotalTime: 45.893  ,  Loss/total: 0.47703  ,  Loss/giou: 0.23852  ,  Loss/l1: 0.02694  ,  Loss/location: 3.13278  ,  IoU: 0.77989  ,  grad_norm: 15.97852  ,  mIoU: 0.78908  ,  mIoU10: 0.78938  ,  mIoU100: 0.78938
+[train: 1, 8 / 125] FPS: 5.6 (5.5)  ,  DataTime: 3.913 (33.754)  ,  ForwardTime: 8.226  ,  TotalTime: 45.893  ,  Loss/total: 0.60090  ,  Loss/giou: 0.30045  ,  Loss/l1: 0.03677  ,  Loss/location: 3.36351  ,  IoU: 0.72781  ,  grad_norm: 15.97852  ,  mIoU: 0.73558  ,  mIoU10: 0.72670  ,  mIoU100: 0.72670
+[train: 1, 8 / 125] FPS: 5.6 (5.5)  ,  DataTime: 3.550 (35.523)  ,  ForwardTime: 6.821  ,  TotalTime: 45.893  ,  Loss/total: 0.57907  ,  Loss/giou: 0.28954  ,  Loss/l1: 0.03579  ,  Loss/location: 3.29171  ,  IoU: 0.73381  ,  grad_norm: 15.97852  ,  mIoU: 0.73803  ,  mIoU10: 0.76789  ,  mIoU100: 0.76789
+[train: 1, 9 / 125] FPS: 5.7 (6.8)  ,  DataTime: 3.488 (33.936)  ,  ForwardTime: 7.530  ,  TotalTime: 44.954  ,  Loss/total: 0.61062  ,  Loss/giou: 0.30531  ,  Loss/l1: 0.03659  ,  Loss/location: 3.35424  ,  IoU: 0.72387  ,  grad_norm: 16.20687  ,  mIoU: 0.73192  ,  mIoU10: 0.72728  ,  mIoU100: 0.72728
+[train: 1, 9 / 125] FPS: 5.7 (6.8)  ,  DataTime: 2.820 (35.638)  ,  ForwardTime: 6.496  ,  TotalTime: 44.954  ,  Loss/total: 0.48333  ,  Loss/giou: 0.24166  ,  Loss/l1: 0.02638  ,  Loss/location: 3.15312  ,  IoU: 0.77568  ,  grad_norm: 16.20687  ,  mIoU: 0.78607  ,  mIoU10: 0.78901  ,  mIoU100: 0.78901
+[train: 1, 9 / 125] FPS: 5.7 (6.8)  ,  DataTime: 3.165 (35.553)  ,  ForwardTime: 6.236  ,  TotalTime: 44.954  ,  Loss/total: 0.57088  ,  Loss/giou: 0.28544  ,  Loss/l1: 0.03463  ,  Loss/location: 3.27577  ,  IoU: 0.73625  ,  grad_norm: 16.20687  ,  mIoU: 0.74170  ,  mIoU10: 0.76498  ,  mIoU100: 0.76498[train: 1, 9 / 125] FPS: 5.7 (6.8)  ,  DataTime: 3.377 (36.083)  ,  ForwardTime: 5.494  ,  TotalTime: 44.954  ,  Loss/total: 0.51430  ,  Loss/giou: 0.25715  ,  Loss/l1: 0.02732  ,  Loss/location: 3.13084  ,  IoU: 0.76247  ,  grad_norm: 16.20687  ,  mIoU: 0.77107  ,  mIoU10: 0.75622  ,  mIoU100: 0.75622
+
+[train: 1, 10 / 125] FPS: 5.8 (6.7)  ,  DataTime: 3.149 (33.791)  ,  ForwardTime: 7.340  ,  TotalTime: 44.280  ,  Loss/total: 0.59831  ,  Loss/giou: 0.29915  ,  Loss/l1: 0.03498  ,  Loss/location: 3.32919  ,  IoU: 0.72806  ,  grad_norm: 16.55934  ,  mIoU: 0.73625  ,  mIoU10: 0.72817  ,  mIoU100: 0.72817
+[train: 1, 10 / 125] FPS: 5.8 (6.7)  ,  DataTime: 2.547 (35.716)  ,  ForwardTime: 6.016  ,  TotalTime: 44.279  ,  Loss/total: 0.48712  ,  Loss/giou: 0.24356  ,  Loss/l1: 0.02572  ,  Loss/location: 3.14992  ,  IoU: 0.77291  ,  grad_norm: 16.55934  ,  mIoU: 0.78262  ,  mIoU10: 0.78837  ,  mIoU100: 0.78837
+[train: 1, 10 / 125] FPS: 5.8 (6.7)  ,  DataTime: 2.860 (35.462)  ,  ForwardTime: 5.958  ,  TotalTime: 44.280  ,  Loss/total: 0.57092  ,  Loss/giou: 0.28546  ,  Loss/l1: 0.03434  ,  Loss/location: 3.26531  ,  IoU: 0.73685  ,  grad_norm: 16.55934  ,  mIoU: 0.74343  ,  mIoU10: 0.76283  ,  mIoU100: 0.76283
+[train: 1, 10 / 125] FPS: 5.8 (6.7)  ,  DataTime: 3.049 (35.870)  ,  ForwardTime: 5.360  ,  TotalTime: 44.279  ,  Loss/total: 0.53154  ,  Loss/giou: 0.26577  ,  Loss/l1: 0.02746  ,  Loss/location: 3.14250  ,  IoU: 0.75498  ,  grad_norm: 16.55934  ,  mIoU: 0.76511  ,  mIoU10: 0.75711  ,  mIoU100: 0.75711
+[train: 1, 11 / 125] FPS: 5.8 (6.6)  ,  DataTime: 2.779 (35.931)  ,  ForwardTime: 5.078  ,  TotalTime: 43.789  ,  Loss/total: 0.53357  ,  Loss/giou: 0.26679  ,  Loss/l1: 0.02710  ,  Loss/location: 3.18466  ,  IoU: 0.75282  ,  grad_norm: 16.21973  ,  mIoU: 0.76266  ,  mIoU10: 0.75726  ,  mIoU100: 0.75761
+[train: 1, 11 / 125] FPS: 5.8 (6.6)  ,  DataTime: 2.325 (35.834)  ,  ForwardTime: 5.630  ,  TotalTime: 43.789  ,  Loss/total: 0.49853  ,  Loss/giou: 0.24927  ,  Loss/l1: 0.02749  ,  Loss/location: 3.16556  ,  IoU: 0.76844  ,  grad_norm: 16.21973  ,  mIoU: 0.77827  ,  mIoU10: 0.78782  ,  mIoU100: 0.78745
+[train: 1, 11 / 125] FPS: 5.8 (6.6)  ,  DataTime: 2.871 (34.103)  ,  ForwardTime: 6.815  ,  TotalTime: 43.789  ,  Loss/total: 0.59106  ,  Loss/giou: 0.29553  ,  Loss/l1: 0.03511  ,  Loss/location: 3.29682  ,  IoU: 0.73241  ,  grad_norm: 16.21973  ,  mIoU: 0.74000  ,  mIoU10: 0.73003  ,  mIoU100: 0.72925
+[train: 1, 11 / 125] FPS: 5.8 (6.6)  ,  DataTime: 2.609 (35.232)  ,  ForwardTime: 5.948  ,  TotalTime: 43.789  ,  Loss/total: 0.56410  ,  Loss/giou: 0.28205  ,  Loss/l1: 0.03281  ,  Loss/location: 3.25217  ,  IoU: 0.73975  ,  grad_norm: 16.21973  ,  mIoU: 0.74642  ,  mIoU10: 0.76048  ,  mIoU100: 0.76133
+[train: 1, 12 / 125] FPS: 5.9 (6.7)  ,  DataTime: 2.555 (35.973)  ,  ForwardTime: 4.785  ,  TotalTime: 43.312  ,  Loss/total: 0.52114  ,  Loss/giou: 0.26057  ,  Loss/l1: 0.02616  ,  Loss/location: 3.16518  ,  IoU: 0.75800  ,  grad_norm: 16.04305  ,  mIoU: 0.76763  ,  mIoU10: 0.75827  ,  mIoU100: 0.75845
+[train: 1, 12 / 125] FPS: 5.9 (6.7)  ,  DataTime: 2.640 (34.164)  ,  ForwardTime: 6.509  ,  TotalTime: 43.313  ,  Loss/total: 0.57787  ,  Loss/giou: 0.28894  ,  Loss/l1: 0.03365  ,  Loss/location: 3.26357  ,  IoU: 0.73734  ,  grad_norm: 16.04305  ,  mIoU: 0.74431  ,  mIoU10: 0.73200  ,  mIoU100: 0.73050
+[train: 1, 12 / 125] FPS: 5.9 (6.7)  ,  DataTime: 2.398 (35.295)  ,  ForwardTime: 5.620  ,  TotalTime: 43.313  ,  Loss/total: 0.55926  ,  Loss/giou: 0.27963  ,  Loss/l1: 0.03163  ,  Loss/location: 3.26390  ,  IoU: 0.74112  ,  grad_norm: 16.04305  ,  mIoU: 0.74674  ,  mIoU10: 0.75869  ,  mIoU100: 0.76012[train: 1, 12 / 125] FPS: 5.9 (6.7)  ,  DataTime: 2.139 (35.758)  ,  ForwardTime: 5.415  ,  TotalTime: 43.313  ,  Loss/total: 0.52213  ,  Loss/giou: 0.26106  ,  Loss/l1: 0.02953  ,  Loss/location: 3.24886  ,  IoU: 0.75901  ,  grad_norm: 16.04305  ,  mIoU: 0.76837  ,  mIoU10: 0.78627  ,  mIoU100: 0.78586
+
+[train: 1, 13 / 125] FPS: 5.8 (4.6)  ,  DataTime: 3.795 (35.954)  ,  ForwardTime: 4.539  ,  TotalTime: 44.288  ,  Loss/total: 0.53514  ,  Loss/giou: 0.26757  ,  Loss/l1: 0.03133  ,  Loss/location: 3.23959  ,  IoU: 0.75360  ,  grad_norm: 16.07726  ,  mIoU: 0.76309  ,  mIoU10: 0.75963  ,  mIoU100: 0.75880
+[train: 1, 13 / 125] FPS: 5.8 (4.6)  ,  DataTime: 3.825 (34.294)  ,  ForwardTime: 6.169  ,  TotalTime: 44.288  ,  Loss/total: 0.56659  ,  Loss/giou: 0.28330  ,  Loss/l1: 0.03228  ,  Loss/location: 3.25183  ,  IoU: 0.74140  ,  grad_norm: 16.07726  ,  mIoU: 0.74932  ,  mIoU10: 0.73376  ,  mIoU100: 0.73195
+[train: 1, 13 / 125] FPS: 5.8 (4.6)  ,  DataTime: 3.083 (35.287)  ,  ForwardTime: 5.918  ,  TotalTime: 44.289  ,  Loss/total: 0.55654  ,  Loss/giou: 0.27827  ,  Loss/l1: 0.03133  ,  Loss/location: 3.25633  ,  IoU: 0.74232  ,  grad_norm: 16.07726  ,  mIoU: 0.74810  ,  mIoU10: 0.75726  ,  mIoU100: 0.75919
+[train: 1, 13 / 125] FPS: 5.8 (4.6)  ,  DataTime: 2.277 (35.907)  ,  ForwardTime: 6.104  ,  TotalTime: 44.288  ,  Loss/total: 0.52291  ,  Loss/giou: 0.26146  ,  Loss/l1: 0.02897  ,  Loss/location: 3.24290  ,  IoU: 0.75801  ,  grad_norm: 16.07726  ,  mIoU: 0.76818  ,  mIoU10: 0.78438  ,  mIoU100: 0.78450
+[train: 1, 14 / 125] FPS: 5.9 (7.0)  ,  DataTime: 3.559 (34.356)  ,  ForwardTime: 5.841  ,  TotalTime: 43.756  ,  Loss/total: 0.55226  ,  Loss/giou: 0.27613  ,  Loss/l1: 0.03094  ,  Loss/location: 3.21935  ,  IoU: 0.74717  ,  grad_norm: 16.02105  ,  mIoU: 0.75503  ,  mIoU10: 0.73520  ,  mIoU100: 0.73360
+[train: 1, 14 / 125] FPS: 5.9 (7.0)  ,  DataTime: 2.121 (35.668)  ,  ForwardTime: 5.966  ,  TotalTime: 43.755  ,  Loss/total: 0.51504  ,  Loss/giou: 0.25752  ,  Loss/l1: 0.02798  ,  Loss/location: 3.23534  ,  IoU: 0.76087  ,  grad_norm: 16.02105  ,  mIoU: 0.77041  ,  mIoU10: 0.78239  ,  mIoU100: 0.78349
+[train: 1, 14 / 125] FPS: 5.9 (7.0)  ,  DataTime: 2.870 (35.169)  ,  ForwardTime: 5.716  ,  TotalTime: 43.756  ,  Loss/total: 0.54061  ,  Loss/giou: 0.27030  ,  Loss/l1: 0.02998  ,  Loss/location: 3.21416  ,  IoU: 0.74909  ,  grad_norm: 16.02105  ,  mIoU: 0.75569  ,  mIoU10: 0.75725  ,  mIoU100: 0.75894
+[train: 1, 14 / 125] FPS: 5.9 (7.0)  ,  DataTime: 3.530 (35.646)  ,  ForwardTime: 4.579  ,  TotalTime: 43.755  ,  Loss/total: 0.54927  ,  Loss/giou: 0.27464  ,  Loss/l1: 0.03181  ,  Loss/location: 3.27532  ,  IoU: 0.74759  ,  grad_norm: 16.02105  ,  mIoU: 0.75651  ,  mIoU10: 0.75970  ,  mIoU100: 0.75864
+[train: 1, 15 / 125] FPS: 5.9 (6.7)  ,  DataTime: 3.328 (34.346)  ,  ForwardTime: 5.726  ,  TotalTime: 43.400  ,  Loss/total: 0.58172  ,  Loss/giou: 0.29086  ,  Loss/l1: 0.03389  ,  Loss/location: 3.28876  ,  IoU: 0.73530  ,  grad_norm: 16.25413  ,  mIoU: 0.74299  ,  mIoU10: 0.73543  ,  mIoU100: 0.73423
+[train: 1, 15 / 125] FPS: 5.9 (6.7)  ,  DataTime: 2.685 (35.165)  ,  ForwardTime: 5.550  ,  TotalTime: 43.401  ,  Loss/total: 0.53570  ,  Loss/giou: 0.26785  ,  Loss/l1: 0.02922  ,  Loss/location: 3.17696  ,  IoU: 0.75123  ,  grad_norm: 16.25413  ,  mIoU: 0.75833  ,  mIoU10: 0.75704  ,  mIoU100: 0.75890[train: 1, 15 / 125] FPS: 5.9 (6.7)  ,  DataTime: 2.049 (35.637)  ,  ForwardTime: 5.714  ,  TotalTime: 43.400  ,  Loss/total: 0.51821  ,  Loss/giou: 0.25911  ,  Loss/l1: 0.02757  ,  Loss/location: 3.24251  ,  IoU: 0.75896  ,  grad_norm: 16.25413  ,  mIoU: 0.76804  ,  mIoU10: 0.78009  ,  mIoU100: 0.78246
+
+[train: 1, 15 / 125] FPS: 5.9 (6.7)  ,  DataTime: 3.300 (35.722)  ,  ForwardTime: 4.378  ,  TotalTime: 43.400  ,  Loss/total: 0.54688  ,  Loss/giou: 0.27344  ,  Loss/l1: 0.03116  ,  Loss/location: 3.27149  ,  IoU: 0.74773  ,  grad_norm: 16.25413  ,  mIoU: 0.75773  ,  mIoU10: 0.76031  ,  mIoU100: 0.75858
+[train: 1, 16 / 125] FPS: 5.9 (6.0)  ,  DataTime: 3.098 (35.395)  ,  ForwardTime: 4.840  ,  TotalTime: 43.334  ,  Loss/total: 0.55950  ,  Loss/giou: 0.27975  ,  Loss/l1: 0.03254  ,  Loss/location: 3.33614  ,  IoU: 0.74258  ,  grad_norm: 16.38858  ,  mIoU: 0.75467  ,  mIoU10: 0.75997  ,  mIoU100: 0.75833
+[train: 1, 16 / 125] FPS: 5.9 (6.0)  ,  DataTime: 3.127 (34.359)  ,  ForwardTime: 5.848  ,  TotalTime: 43.334  ,  Loss/total: 0.58114  ,  Loss/giou: 0.29057  ,  Loss/l1: 0.03354  ,  Loss/location: 3.28464  ,  IoU: 0.73498  ,  grad_norm: 16.38858  ,  mIoU: 0.74292  ,  mIoU10: 0.73548  ,  mIoU100: 0.73477
+[train: 1, 16 / 125] FPS: 5.9 (6.0)  ,  DataTime: 2.006 (35.679)  ,  ForwardTime: 5.648  ,  TotalTime: 43.334  ,  Loss/total: 0.50562  ,  Loss/giou: 0.25281  ,  Loss/l1: 0.02655  ,  Loss/location: 3.19903  ,  IoU: 0.76431  ,  grad_norm: 16.38858  ,  mIoU: 0.77401  ,  mIoU10: 0.77849  ,  mIoU100: 0.78194
+[train: 1, 16 / 125] FPS: 5.9 (6.0)  ,  DataTime: 2.919 (35.113)  ,  ForwardTime: 5.302  ,  TotalTime: 43.334  ,  Loss/total: 0.52936  ,  Loss/giou: 0.26468  ,  Loss/l1: 0.02840  ,  Loss/location: 3.16876  ,  IoU: 0.75362  ,  grad_norm: 16.38858  ,  mIoU: 0.76029  ,  mIoU10: 0.75778  ,  mIoU100: 0.75899
+[train: 1, 17 / 125] FPS: 6.0 (6.9)  ,  DataTime: 2.948 (34.181)  ,  ForwardTime: 5.847  ,  TotalTime: 42.975  ,  Loss/total: 0.57798  ,  Loss/giou: 0.28899  ,  Loss/l1: 0.03299  ,  Loss/location: 3.28383  ,  IoU: 0.73618  ,  grad_norm: 16.21594  ,  mIoU: 0.74442  ,  mIoU10: 0.73652  ,  mIoU100: 0.73534
+[train: 1, 17 / 125] FPS: 6.0 (6.9)  ,  DataTime: 1.966 (35.574)  ,  ForwardTime: 5.436  ,  TotalTime: 42.975  ,  Loss/total: 0.51340  ,  Loss/giou: 0.25670  ,  Loss/l1: 0.02735  ,  Loss/location: 3.22273  ,  IoU: 0.76120  ,  grad_norm: 16.21594  ,  mIoU: 0.77013  ,  mIoU10: 0.77619  ,  mIoU100: 0.78124
+[train: 1, 17 / 125] FPS: 6.0 (6.9)  ,  DataTime: 2.875 (35.019)  ,  ForwardTime: 5.082  ,  TotalTime: 42.976  ,  Loss/total: 0.52914  ,  Loss/giou: 0.26457  ,  Loss/l1: 0.02790  ,  Loss/location: 3.17346  ,  IoU: 0.75361  ,  grad_norm: 16.21594  ,  mIoU: 0.76029  ,  mIoU10: 0.75878  ,  mIoU100: 0.75907
+[train: 1, 17 / 125] FPS: 6.0 (6.9)  ,  DataTime: 2.919 (35.390)  ,  ForwardTime: 4.666  ,  TotalTime: 42.975  ,  Loss/total: 0.57051  ,  Loss/giou: 0.28525  ,  Loss/l1: 0.03356  ,  Loss/location: 3.34978  ,  IoU: 0.73873  ,  grad_norm: 16.21594  ,  mIoU: 0.75094  ,  mIoU10: 0.75917  ,  mIoU100: 0.75790
+[train: 1, 18 / 125] FPS: 6.0 (6.5)  ,  DataTime: 1.909 (35.427)  ,  ForwardTime: 5.426  ,  TotalTime: 42.762  ,  Loss/total: 0.52977  ,  Loss/giou: 0.26489  ,  Loss/l1: 0.02837  ,  Loss/location: 3.25009  ,  IoU: 0.75423  ,  grad_norm: 16.08402  ,  mIoU: 0.76364  ,  mIoU10: 0.77436  ,  mIoU100: 0.78026
+[train: 1, 18 / 125] FPS: 6.0 (6.5)  ,  DataTime: 2.788 (34.147)  ,  ForwardTime: 5.827  ,  TotalTime: 42.762  ,  Loss/total: 0.57654  ,  Loss/giou: 0.28827  ,  Loss/l1: 0.03242  ,  Loss/location: 3.28289  ,  IoU: 0.73657  ,  grad_norm: 16.08402  ,  mIoU: 0.74456  ,  mIoU10: 0.73737  ,  mIoU100: 0.73585
+[train: 1, 18 / 125] FPS: 6.0 (6.5)  ,  DataTime: 2.762 (35.505)  ,  ForwardTime: 4.495  ,  TotalTime: 42.762  ,  Loss/total: 0.56001  ,  Loss/giou: 0.28000  ,  Loss/l1: 0.03245  ,  Loss/location: 3.31508  ,  IoU: 0.74301  ,  grad_norm: 16.08402  ,  mIoU: 0.75596  ,  mIoU10: 0.75877  ,  mIoU100: 0.75779[train: 1, 18 / 125] FPS: 6.0 (6.5)  ,  DataTime: 2.720 (35.133)  ,  ForwardTime: 4.909  ,  TotalTime: 42.762  ,  Loss/total: 0.52510  ,  Loss/giou: 0.26255  ,  Loss/l1: 0.02737  ,  Loss/location: 3.16683  ,  IoU: 0.75493  ,  grad_norm: 16.08402  ,  mIoU: 0.76169  ,  mIoU10: 0.76000  ,  mIoU100: 0.75921
+
+[train: 1, 19 / 125] FPS: 6.0 (5.8)  ,  DataTime: 2.581 (35.200)  ,  ForwardTime: 5.041  ,  TotalTime: 42.821  ,  Loss/total: 0.51805  ,  Loss/giou: 0.25903  ,  Loss/l1: 0.02673  ,  Loss/location: 3.15005  ,  IoU: 0.75783  ,  grad_norm: 15.93958  ,  mIoU: 0.76420  ,  mIoU10: 0.76128  ,  mIoU100: 0.75947
+[train: 1, 19 / 125] FPS: 6.0 (5.8)  ,  DataTime: 2.027 (35.571)  ,  ForwardTime: 5.223  ,  TotalTime: 42.821  ,  Loss/total: 0.53126  ,  Loss/giou: 0.26563  ,  Loss/l1: 0.02799  ,  Loss/location: 3.24799  ,  IoU: 0.75319  ,  grad_norm: 15.93958  ,  mIoU: 0.76137  ,  mIoU10: 0.77250  ,  mIoU100: 0.77927
+[train: 1, 19 / 125] FPS: 6.0 (5.8)  ,  DataTime: 2.646 (34.062)  ,  ForwardTime: 6.114  ,  TotalTime: 42.822  ,  Loss/total: 0.56347  ,  Loss/giou: 0.28173  ,  Loss/l1: 0.03132  ,  Loss/location: 3.24889  ,  IoU: 0.74202  ,  grad_norm: 15.93958  ,  mIoU: 0.74930  ,  mIoU10: 0.73882  ,  mIoU100: 0.73656
+[train: 1, 19 / 125] FPS: 6.0 (5.8)  ,  DataTime: 2.619 (35.613)  ,  ForwardTime: 4.589  ,  TotalTime: 42.821  ,  Loss/total: 0.55138  ,  Loss/giou: 0.27569  ,  Loss/l1: 0.03150  ,  Loss/location: 3.29341  ,  IoU: 0.74629  ,  grad_norm: 15.93958  ,  mIoU: 0.75863  ,  mIoU10: 0.75817  ,  mIoU100: 0.75784
+[train: 1, 20 / 125] FPS: 6.0 (6.2)  ,  DataTime: 2.154 (35.552)  ,  ForwardTime: 5.040  ,  TotalTime: 42.745  ,  Loss/total: 0.52833  ,  Loss/giou: 0.26417  ,  Loss/l1: 0.02793  ,  Loss/location: 3.23776  ,  IoU: 0.75458  ,  grad_norm: 15.99138  ,  mIoU: 0.76303  ,  mIoU10: 0.77105  ,  mIoU100: 0.77846
+[train: 1, 20 / 125] FPS: 6.0 (6.2)  ,  DataTime: 2.493 (35.584)  ,  ForwardTime: 4.669  ,  TotalTime: 42.745  ,  Loss/total: 0.54722  ,  Loss/giou: 0.27361  ,  Loss/l1: 0.03141  ,  Loss/location: 3.27292  ,  IoU: 0.74832  ,  grad_norm: 15.99138  ,  mIoU: 0.76108  ,  mIoU10: 0.75811  ,  mIoU100: 0.75800[train: 1, 20 / 125] FPS: 6.0 (6.2)  ,  DataTime: 2.518 (34.067)  ,  ForwardTime: 6.161  ,  TotalTime: 42.745  ,  Loss/total: 0.55965  ,  Loss/giou: 0.27983  ,  Loss/l1: 0.03078  ,  Loss/location: 3.23545  ,  IoU: 0.74319  ,  grad_norm: 15.99138  ,  mIoU: 0.75045  ,  mIoU10: 0.74011  ,  mIoU100: 0.73725
+
+[train: 1, 20 / 125] FPS: 6.0 (6.2)  ,  DataTime: 2.457 (35.065)  ,  ForwardTime: 5.224  ,  TotalTime: 42.746  ,  Loss/total: 0.51483  ,  Loss/giou: 0.25741  ,  Loss/l1: 0.02668  ,  Loss/location: 3.14545  ,  IoU: 0.75925  ,  grad_norm: 15.99138  ,  mIoU: 0.76594  ,  mIoU10: 0.76264  ,  mIoU100: 0.75980
+[train: 1, 21 / 125] FPS: 6.0 (7.2)  ,  DataTime: 2.401 (33.915)  ,  ForwardTime: 6.091  ,  TotalTime: 42.406  ,  Loss/total: 0.55754  ,  Loss/giou: 0.27877  ,  Loss/l1: 0.03022  ,  Loss/location: 3.23198  ,  IoU: 0.74371  ,  grad_norm: 16.05569  ,  mIoU: 0.75103  ,  mIoU10: 0.74121  ,  mIoU100: 0.73791
+[train: 1, 21 / 125] FPS: 6.0 (7.2)  ,  DataTime: 2.056 (35.476)  ,  ForwardTime: 4.875  ,  TotalTime: 42.406  ,  Loss/total: 0.53507  ,  Loss/giou: 0.26753  ,  Loss/l1: 0.02800  ,  Loss/location: 3.25553  ,  IoU: 0.75139  ,  grad_norm: 16.05569  ,  mIoU: 0.75946  ,  mIoU10: 0.76951  ,  mIoU100: 0.77755
+[train: 1, 21 / 125] FPS: 6.0 (7.2)  ,  DataTime: 2.378 (35.496)  ,  ForwardTime: 4.532  ,  TotalTime: 42.406  ,  Loss/total: 0.56403  ,  Loss/giou: 0.28201  ,  Loss/l1: 0.03228  ,  Loss/location: 3.30292  ,  IoU: 0.74141  ,  grad_norm: 16.05569  ,  mIoU: 0.75363  ,  mIoU10: 0.75743  ,  mIoU100: 0.75779
+[train: 1, 21 / 125] FPS: 6.0 (7.2)  ,  DataTime: 2.343 (34.957)  ,  ForwardTime: 5.106  ,  TotalTime: 42.406  ,  Loss/total: 0.50191  ,  Loss/giou: 0.25096  ,  Loss/l1: 0.02581  ,  Loss/location: 3.10820  ,  IoU: 0.76500  ,  grad_norm: 16.05569  ,  mIoU: 0.77198  ,  mIoU10: 0.76442  ,  mIoU100: 0.76038
+[train: 1, 22 / 125] FPS: 6.0 (5.2)  ,  DataTime: 1.966 (35.633)  ,  ForwardTime: 5.105  ,  TotalTime: 42.703  ,  Loss/total: 0.53641  ,  Loss/giou: 0.26821  ,  Loss/l1: 0.02764  ,  Loss/location: 3.25065  ,  IoU: 0.75056  ,  grad_norm: 16.11297  ,  mIoU: 0.75944  ,  mIoU10: 0.76857  ,  mIoU100: 0.77673
+[train: 1, 22 / 125] FPS: 6.0 (5.2)  ,  DataTime: 2.240 (35.501)  ,  ForwardTime: 4.963  ,  TotalTime: 42.703  ,  Loss/total: 0.49732  ,  Loss/giou: 0.24866  ,  Loss/l1: 0.02526  ,  Loss/location: 3.09054  ,  IoU: 0.76685  ,  grad_norm: 16.11297  ,  mIoU: 0.77475  ,  mIoU10: 0.76642  ,  mIoU100: 0.76103
+[train: 1, 22 / 125] FPS: 6.0 (5.2)  ,  DataTime: 2.295 (34.038)  ,  ForwardTime: 6.370  ,  TotalTime: 42.704  ,  Loss/total: 0.54933  ,  Loss/giou: 0.27466  ,  Loss/l1: 0.02947  ,  Loss/location: 3.20584  ,  IoU: 0.74710  ,  grad_norm: 16.11297  ,  mIoU: 0.75480  ,  mIoU10: 0.74240  ,  mIoU100: 0.73868
+[train: 1, 22 / 125] FPS: 6.0 (5.2)  ,  DataTime: 2.274 (35.664)  ,  ForwardTime: 4.766  ,  TotalTime: 42.704  ,  Loss/total: 0.57152  ,  Loss/giou: 0.28576  ,  Loss/l1: 0.03406  ,  Loss/location: 3.35463  ,  IoU: 0.73879  ,  grad_norm: 16.11297  ,  mIoU: 0.75007  ,  mIoU10: 0.75614  ,  mIoU100: 0.75744
+[train: 1, 23 / 125] FPS: 5.9 (4.8)  ,  DataTime: 2.148 (35.792)  ,  ForwardTime: 5.243  ,  TotalTime: 43.182  ,  Loss/total: 0.50686  ,  Loss/giou: 0.25343  ,  Loss/l1: 0.02619  ,  Loss/location: 3.12523  ,  IoU: 0.76319  ,  grad_norm: 16.02032  ,  mIoU: 0.77038  ,  mIoU10: 0.76785  ,  mIoU100: 0.76144
+[train: 1, 23 / 125] FPS: 5.9 (4.8)  ,  DataTime: 2.198 (34.094)  ,  ForwardTime: 6.890  ,  TotalTime: 43.183  ,  Loss/total: 0.53675  ,  Loss/giou: 0.26838  ,  Loss/l1: 0.02858  ,  Loss/location: 3.17129  ,  IoU: 0.75253  ,  grad_norm: 16.02032  ,  mIoU: 0.76025  ,  mIoU10: 0.74379  ,  mIoU100: 0.73961
+[train: 1, 23 / 125] FPS: 5.9 (4.8)  ,  DataTime: 1.885 (36.324)  ,  ForwardTime: 4.973  ,  TotalTime: 43.182  ,  Loss/total: 0.53729  ,  Loss/giou: 0.26864  ,  Loss/l1: 0.02742  ,  Loss/location: 3.24607  ,  IoU: 0.74990  ,  grad_norm: 16.02032  ,  mIoU: 0.75915  ,  mIoU10: 0.76765  ,  mIoU100: 0.77596
+[train: 1, 23 / 125] FPS: 5.9 (4.8)  ,  DataTime: 2.179 (36.353)  ,  ForwardTime: 4.650  ,  TotalTime: 43.182  ,  Loss/total: 0.56564  ,  Loss/giou: 0.28282  ,  Loss/l1: 0.03323  ,  Loss/location: 3.34719  ,  IoU: 0.74093  ,  grad_norm: 16.02032  ,  mIoU: 0.75198  ,  mIoU10: 0.75533  ,  mIoU100: 0.75720
+[train: 1, 24 / 125] FPS: 5.9 (5.0)  ,  DataTime: 1.811 (36.872)  ,  ForwardTime: 4.851  ,  TotalTime: 43.534  ,  Loss/total: 0.53882  ,  Loss/giou: 0.26941  ,  Loss/l1: 0.02720  ,  Loss/location: 3.24436  ,  IoU: 0.74897  ,  grad_norm: 16.05435  ,  mIoU: 0.75832  ,  mIoU10: 0.76655  ,  mIoU100: 0.77523
+[train: 1, 24 / 125] FPS: 5.9 (5.0)  ,  DataTime: 2.062 (36.337)  ,  ForwardTime: 5.135  ,  TotalTime: 43.534  ,  Loss/total: 0.50201  ,  Loss/giou: 0.25101  ,  Loss/l1: 0.02566  ,  Loss/location: 3.11062  ,  IoU: 0.76516  ,  grad_norm: 16.05435  ,  mIoU: 0.77280  ,  mIoU10: 0.76906  ,  mIoU100: 0.76191
+[train: 1, 24 / 125] FPS: 5.9 (5.0)  ,  DataTime: 2.116 (34.087)  ,  ForwardTime: 7.331  ,  TotalTime: 43.534  ,  Loss/total: 0.53426  ,  Loss/giou: 0.26713  ,  Loss/l1: 0.02827  ,  Loss/location: 3.16835  ,  IoU: 0.75334  ,  grad_norm: 16.05435  ,  mIoU: 0.76147  ,  mIoU10: 0.74491  ,  mIoU100: 0.74052
+[train: 1, 24 / 125] FPS: 5.9 (5.0)  ,  DataTime: 2.094 (36.347)  ,  ForwardTime: 5.094  ,  TotalTime: 43.534  ,  Loss/total: 0.57346  ,  Loss/giou: 0.28673  ,  Loss/l1: 0.03489  ,  Loss/location: 3.37020  ,  IoU: 0.73826  ,  grad_norm: 16.05435  ,  mIoU: 0.74899  ,  mIoU10: 0.75462  ,  mIoU100: 0.75686
+[train: 1, 25 / 125] FPS: 5.7 (3.7)  ,  DataTime: 1.964 (37.161)  ,  ForwardTime: 5.434  ,  TotalTime: 44.559  ,  Loss/total: 0.54221  ,  Loss/giou: 0.27111  ,  Loss/l1: 0.02714  ,  Loss/location: 3.25045  ,  IoU: 0.74727  ,  grad_norm: 16.07274  ,  mIoU: 0.75666  ,  mIoU10: 0.76548  ,  mIoU100: 0.77449
+[train: 1, 25 / 125] FPS: 5.7 (3.7)  ,  DataTime: 3.075 (34.383)  ,  ForwardTime: 7.102  ,  TotalTime: 44.559  ,  Loss/total: 0.53226  ,  Loss/giou: 0.26613  ,  Loss/l1: 0.02791  ,  Loss/location: 3.16165  ,  IoU: 0.75393  ,  grad_norm: 16.07274  ,  mIoU: 0.76198  ,  mIoU10: 0.74673  ,  mIoU100: 0.74138
+[train: 1, 25 / 125] FPS: 5.7 (3.7)  ,  DataTime: 2.446 (36.868)  ,  ForwardTime: 5.245  ,  TotalTime: 44.559  ,  Loss/total: 0.50287  ,  Loss/giou: 0.25144  ,  Loss/l1: 0.02568  ,  Loss/location: 3.11283  ,  IoU: 0.76503  ,  grad_norm: 16.07274  ,  mIoU: 0.77310  ,  mIoU10: 0.77010  ,  mIoU100: 0.76236
+[train: 1, 25 / 125] FPS: 5.7 (3.7)  ,  DataTime: 2.934 (36.382)  ,  ForwardTime: 5.242  ,  TotalTime: 44.559  ,  Loss/total: 0.58253  ,  Loss/giou: 0.29127  ,  Loss/l1: 0.03523  ,  Loss/location: 3.39572  ,  IoU: 0.73362  ,  grad_norm: 16.07274  ,  mIoU: 0.74405  ,  mIoU10: 0.75338  ,  mIoU100: 0.75635
+[train: 1, 26 / 125] FPS: 5.7 (5.3)  ,  DataTime: 2.960 (34.598)  ,  ForwardTime: 7.156  ,  TotalTime: 44.714  ,  Loss/total: 0.52479  ,  Loss/giou: 0.26239  ,  Loss/l1: 0.02732  ,  Loss/location: 3.13890  ,  IoU: 0.75710  ,  grad_norm: 15.98184  ,  mIoU: 0.76523  ,  mIoU10: 0.74881  ,  mIoU100: 0.74230
+[train: 1, 26 / 125] FPS: 5.7 (5.3)  ,  DataTime: 1.891 (37.457)  ,  ForwardTime: 5.367  ,  TotalTime: 44.714  ,  Loss/total: 0.53327  ,  Loss/giou: 0.26664  ,  Loss/l1: 0.02652  ,  Loss/location: 3.23075  ,  IoU: 0.75114  ,  grad_norm: 15.98184  ,  mIoU: 0.76029  ,  mIoU10: 0.76443  ,  mIoU100: 0.77394
+[train: 1, 26 / 125] FPS: 5.7 (5.3)  ,  DataTime: 2.356 (37.255)  ,  ForwardTime: 5.103  ,  TotalTime: 44.714  ,  Loss/total: 0.50254  ,  Loss/giou: 0.25127  ,  Loss/l1: 0.02542  ,  Loss/location: 3.11294  ,  IoU: 0.76482  ,  grad_norm: 15.98184  ,  mIoU: 0.77277  ,  mIoU10: 0.77097  ,  mIoU100: 0.76276
+[train: 1, 26 / 125] FPS: 5.7 (5.3)  ,  DataTime: 2.826 (36.628)  ,  ForwardTime: 5.261  ,  TotalTime: 44.714  ,  Loss/total: 0.57224  ,  Loss/giou: 0.28612  ,  Loss/l1: 0.03432  ,  Loss/location: 3.36259  ,  IoU: 0.73799  ,  grad_norm: 15.98184  ,  mIoU: 0.74874  ,  mIoU10: 0.75284  ,  mIoU100: 0.75605
+[train: 1, 27 / 125] FPS: 5.7 (5.0)  ,  DataTime: 2.854 (34.872)  ,  ForwardTime: 7.211  ,  TotalTime: 44.937  ,  Loss/total: 0.52565  ,  Loss/giou: 0.26282  ,  Loss/l1: 0.02867  ,  Loss/location: 3.16265  ,  IoU: 0.75730  ,  grad_norm: 15.91281  ,  mIoU: 0.76488  ,  mIoU10: 0.75069  ,  mIoU100: 0.74314
+[train: 1, 27 / 125] FPS: 5.7 (5.0)  ,  DataTime: 2.272 (37.668)  ,  ForwardTime: 4.998  ,  TotalTime: 44.938  ,  Loss/total: 0.49865  ,  Loss/giou: 0.24933  ,  Loss/l1: 0.02501  ,  Loss/location: 3.09594  ,  IoU: 0.76648  ,  grad_norm: 15.91281  ,  mIoU: 0.77419  ,  mIoU10: 0.77197  ,  mIoU100: 0.76318
+[train: 1, 27 / 125] FPS: 5.7 (5.0)  ,  DataTime: 2.724 (36.673)  ,  ForwardTime: 5.541  ,  TotalTime: 44.938  ,  Loss/total: 0.56620  ,  Loss/giou: 0.28310  ,  Loss/l1: 0.03363  ,  Loss/location: 3.34490  ,  IoU: 0.74031  ,  grad_norm: 15.91281  ,  mIoU: 0.75078  ,  mIoU10: 0.75275  ,  mIoU100: 0.75586
+[train: 1, 27 / 125] FPS: 5.7 (5.0)  ,  DataTime: 1.886 (37.619)  ,  ForwardTime: 5.432  ,  TotalTime: 44.938  ,  Loss/total: 0.53420  ,  Loss/giou: 0.26710  ,  Loss/l1: 0.02666  ,  Loss/location: 3.22762  ,  IoU: 0.75092  ,  grad_norm: 15.91281  ,  mIoU: 0.76029  ,  mIoU10: 0.76366  ,  mIoU100: 0.77343
+[train: 1, 28 / 125] FPS: 5.7 (4.7)  ,  DataTime: 1.846 (37.526)  ,  ForwardTime: 5.919  ,  TotalTime: 45.291  ,  Loss/total: 0.53666  ,  Loss/giou: 0.26833  ,  Loss/l1: 0.02668  ,  Loss/location: 3.23335  ,  IoU: 0.74982  ,  grad_norm: 15.93532  ,  mIoU: 0.75927  ,  mIoU10: 0.76322  ,  mIoU100: 0.77293[train: 1, 28 / 125] FPS: 5.7 (4.7)  ,  DataTime: 2.755 (34.986)  ,  ForwardTime: 7.550  ,  TotalTime: 45.291  ,  Loss/total: 0.53762  ,  Loss/giou: 0.26881  ,  Loss/l1: 0.03019  ,  Loss/location: 3.19808  ,  IoU: 0.75243  ,  grad_norm: 15.93532  ,  mIoU: 0.75994  ,  mIoU10: 0.75201  ,  mIoU100: 0.74374
+
+[train: 1, 28 / 125] FPS: 5.7 (4.7)  ,  DataTime: 2.631 (37.242)  ,  ForwardTime: 5.419  ,  TotalTime: 45.291  ,  Loss/total: 0.57364  ,  Loss/giou: 0.28682  ,  Loss/l1: 0.03542  ,  Loss/location: 3.36801  ,  IoU: 0.73803  ,  grad_norm: 15.93532  ,  mIoU: 0.74813  ,  mIoU10: 0.75208  ,  mIoU100: 0.75558
+[train: 1, 28 / 125] FPS: 5.7 (4.7)  ,  DataTime: 2.444 (37.713)  ,  ForwardTime: 5.135  ,  TotalTime: 45.291  ,  Loss/total: 0.49888  ,  Loss/giou: 0.24944  ,  Loss/l1: 0.02500  ,  Loss/location: 3.09796  ,  IoU: 0.76633  ,  grad_norm: 15.93532  ,  mIoU: 0.77396  ,  mIoU10: 0.77283  ,  mIoU100: 0.76357
+[train: 1, 29 / 125] FPS: 5.7 (5.6)  ,  DataTime: 2.471 (37.771)  ,  ForwardTime: 5.059  ,  TotalTime: 45.300  ,  Loss/total: 0.50208  ,  Loss/giou: 0.25104  ,  Loss/l1: 0.02511  ,  Loss/location: 3.10513  ,  IoU: 0.76478  ,  grad_norm: 15.92928  ,  mIoU: 0.77184  ,  mIoU10: 0.77330  ,  mIoU100: 0.76385
+[train: 1, 29 / 125] FPS: 5.7 (5.6)  ,  DataTime: 2.544 (37.384)  ,  ForwardTime: 5.373  ,  TotalTime: 45.300  ,  Loss/total: 0.56766  ,  Loss/giou: 0.28383  ,  Loss/l1: 0.03483  ,  Loss/location: 3.35286  ,  IoU: 0.74043  ,  grad_norm: 15.92928  ,  mIoU: 0.75049  ,  mIoU10: 0.75150  ,  mIoU100: 0.75541
+[train: 1, 29 / 125] FPS: 5.7 (5.6)  ,  DataTime: 1.862 (37.654)  ,  ForwardTime: 5.785  ,  TotalTime: 45.300  ,  Loss/total: 0.53512  ,  Loss/giou: 0.26756  ,  Loss/l1: 0.02639  ,  Loss/location: 3.22900  ,  IoU: 0.75028  ,  grad_norm: 15.92928  ,  mIoU: 0.75947  ,  mIoU10: 0.76297  ,  mIoU100: 0.77246
+[train: 1, 29 / 125] FPS: 5.7 (5.6)  ,  DataTime: 2.665 (34.977)  ,  ForwardTime: 7.659  ,  TotalTime: 45.300  ,  Loss/total: 0.53484  ,  Loss/giou: 0.26742  ,  Loss/l1: 0.02971  ,  Loss/location: 3.18958  ,  IoU: 0.75328  ,  grad_norm: 15.92928  ,  mIoU: 0.76049  ,  mIoU10: 0.75304  ,  mIoU100: 0.74431
+[train: 1, 30 / 125] FPS: 5.7 (5.8)  ,  DataTime: 1.848 (37.630)  ,  ForwardTime: 5.781  ,  TotalTime: 45.259  ,  Loss/total: 0.53716  ,  Loss/giou: 0.26858  ,  Loss/l1: 0.02641  ,  Loss/location: 3.23334  ,  IoU: 0.74941  ,  grad_norm: 15.98499  ,  mIoU: 0.75857  ,  mIoU10: 0.76252  ,  mIoU100: 0.77200
+[train: 1, 30 / 125] FPS: 5.7 (5.8)  ,  DataTime: 2.580 (34.949)  ,  ForwardTime: 7.730  ,  TotalTime: 45.260  ,  Loss/total: 0.54478  ,  Loss/giou: 0.27239  ,  Loss/l1: 0.03247  ,  Loss/location: 3.23148  ,  IoU: 0.75013  ,  grad_norm: 15.98499  ,  mIoU: 0.75694  ,  mIoU10: 0.75360  ,  mIoU100: 0.74473
+[train: 1, 30 / 125] FPS: 5.7 (5.8)  ,  DataTime: 2.392 (37.683)  ,  ForwardTime: 5.185  ,  TotalTime: 45.260  ,  Loss/total: 0.51017  ,  Loss/giou: 0.25509  ,  Loss/l1: 0.02555  ,  Loss/location: 3.11685  ,  IoU: 0.76099  ,  grad_norm: 15.98499  ,  mIoU: 0.76899  ,  mIoU10: 0.77336  ,  mIoU100: 0.76402
+[train: 1, 30 / 125] FPS: 5.7 (5.8)  ,  DataTime: 2.463 (37.550)  ,  ForwardTime: 5.246  ,  TotalTime: 45.260  ,  Loss/total: 0.56190  ,  Loss/giou: 0.28095  ,  Loss/l1: 0.03419  ,  Loss/location: 3.33659  ,  IoU: 0.74273  ,  grad_norm: 15.98499  ,  mIoU: 0.75230  ,  mIoU10: 0.75094  ,  mIoU100: 0.75530
+[train: 1, 31 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.385 (37.436)  ,  ForwardTime: 5.363  ,  TotalTime: 45.185  ,  Loss/total: 0.56263  ,  Loss/giou: 0.28132  ,  Loss/l1: 0.03463  ,  Loss/location: 3.34450  ,  IoU: 0.74234  ,  grad_norm: 15.98192  ,  mIoU: 0.75174  ,  mIoU10: 0.75083  ,  mIoU100: 0.75519
+[train: 1, 31 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.499 (34.942)  ,  ForwardTime: 7.744  ,  TotalTime: 45.185  ,  Loss/total: 0.54505  ,  Loss/giou: 0.27252  ,  Loss/l1: 0.03312  ,  Loss/location: 3.23076  ,  IoU: 0.75045  ,  grad_norm: 15.98192  ,  mIoU: 0.75755  ,  mIoU10: 0.75417  ,  mIoU100: 0.74515
+[train: 1, 31 / 125] FPS: 5.7 (6.0)  ,  DataTime: 1.941 (37.595)  ,  ForwardTime: 5.649  ,  TotalTime: 45.185  ,  Loss/total: 0.53752  ,  Loss/giou: 0.26876  ,  Loss/l1: 0.02673  ,  Loss/location: 3.24369  ,  IoU: 0.74960  ,  grad_norm: 15.98192  ,  mIoU: 0.75805  ,  mIoU10: 0.76228  ,  mIoU100: 0.77155[train: 1, 31 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.317 (37.612)  ,  ForwardTime: 5.256  ,  TotalTime: 45.185  ,  Loss/total: 0.51446  ,  Loss/giou: 0.25723  ,  Loss/l1: 0.02569  ,  Loss/location: 3.13756  ,  IoU: 0.75883  ,  grad_norm: 15.98192  ,  mIoU: 0.76667  ,  mIoU10: 0.77278  ,  mIoU100: 0.76411
+
+[train: 1, 32 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.313 (37.322)  ,  ForwardTime: 5.444  ,  TotalTime: 45.079  ,  Loss/total: 0.56810  ,  Loss/giou: 0.28405  ,  Loss/l1: 0.03490  ,  Loss/location: 3.35418  ,  IoU: 0.73968  ,  grad_norm: 15.89358  ,  mIoU: 0.74901  ,  mIoU10: 0.75070  ,  mIoU100: 0.75500
+[train: 1, 32 / 125] FPS: 5.7 (6.1)  ,  DataTime: 1.992 (37.566)  ,  ForwardTime: 5.522  ,  TotalTime: 45.080  ,  Loss/total: 0.54388  ,  Loss/giou: 0.27194  ,  Loss/l1: 0.02689  ,  Loss/location: 3.25619  ,  IoU: 0.74670  ,  grad_norm: 15.89358  ,  mIoU: 0.75495  ,  mIoU10: 0.76175  ,  mIoU100: 0.77103
+[train: 1, 32 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.248 (37.457)  ,  ForwardTime: 5.374  ,  TotalTime: 45.080  ,  Loss/total: 0.51583  ,  Loss/giou: 0.25792  ,  Loss/l1: 0.02599  ,  Loss/location: 3.14382  ,  IoU: 0.75848  ,  grad_norm: 15.89358  ,  mIoU: 0.76652  ,  mIoU10: 0.77202  ,  mIoU100: 0.76418
+[train: 1, 32 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.424 (34.780)  ,  ForwardTime: 7.875  ,  TotalTime: 45.080  ,  Loss/total: 0.55049  ,  Loss/giou: 0.27524  ,  Loss/l1: 0.03393  ,  Loss/location: 3.25854  ,  IoU: 0.74832  ,  grad_norm: 15.89358  ,  mIoU: 0.75561  ,  mIoU10: 0.75427  ,  mIoU100: 0.74547
+[train: 1, 33 / 125] FPS: 5.7 (6.9)  ,  DataTime: 2.246 (37.262)  ,  ForwardTime: 5.327  ,  TotalTime: 44.835  ,  Loss/total: 0.57747  ,  Loss/giou: 0.28873  ,  Loss/l1: 0.03626  ,  Loss/location: 3.37367  ,  IoU: 0.73633  ,  grad_norm: 15.84823  ,  mIoU: 0.74537  ,  mIoU10: 0.75008  ,  mIoU100: 0.75470
+[train: 1, 33 / 125] FPS: 5.7 (6.9)  ,  DataTime: 2.353 (34.779)  ,  ForwardTime: 7.704  ,  TotalTime: 44.836  ,  Loss/total: 0.55493  ,  Loss/giou: 0.27746  ,  Loss/l1: 0.03391  ,  Loss/location: 3.27415  ,  IoU: 0.74619  ,  grad_norm: 15.84823  ,  mIoU: 0.75320  ,  mIoU10: 0.75375  ,  mIoU100: 0.74571
+[train: 1, 33 / 125] FPS: 5.7 (6.9)  ,  DataTime: 1.935 (37.490)  ,  ForwardTime: 5.411  ,  TotalTime: 44.835  ,  Loss/total: 0.54910  ,  Loss/giou: 0.27455  ,  Loss/l1: 0.02717  ,  Loss/location: 3.27006  ,  IoU: 0.74428  ,  grad_norm: 15.84823  ,  mIoU: 0.75234  ,  mIoU10: 0.76099  ,  mIoU100: 0.77047
+[train: 1, 33 / 125] FPS: 5.7 (6.9)  ,  DataTime: 2.183 (37.305)  ,  ForwardTime: 5.348  ,  TotalTime: 44.836  ,  Loss/total: 0.52552  ,  Loss/giou: 0.26276  ,  Loss/l1: 0.02757  ,  Loss/location: 3.17383  ,  IoU: 0.75494  ,  grad_norm: 15.84823  ,  mIoU: 0.76311  ,  mIoU10: 0.77124  ,  mIoU100: 0.76415
+[train: 1, 34 / 125] FPS: 5.7 (7.1)  ,  DataTime: 2.183 (37.152)  ,  ForwardTime: 5.238  ,  TotalTime: 44.573  ,  Loss/total: 0.58013  ,  Loss/giou: 0.29006  ,  Loss/l1: 0.03602  ,  Loss/location: 3.37698  ,  IoU: 0.73497  ,  grad_norm: 15.71638  ,  mIoU: 0.74359  ,  mIoU10: 0.74951  ,  mIoU100: 0.75438
+[train: 1, 34 / 125] FPS: 5.7 (7.1)  ,  DataTime: 2.286 (34.763)  ,  ForwardTime: 7.523  ,  TotalTime: 44.573  ,  Loss/total: 0.55309  ,  Loss/giou: 0.27654  ,  Loss/l1: 0.03362  ,  Loss/location: 3.27057  ,  IoU: 0.74679  ,  grad_norm: 15.71638  ,  mIoU: 0.75341  ,  mIoU10: 0.75317  ,  mIoU100: 0.74594
+[train: 1, 34 / 125] FPS: 5.7 (7.1)  ,  DataTime: 1.880 (37.348)  ,  ForwardTime: 5.344  ,  TotalTime: 44.573  ,  Loss/total: 0.54562  ,  Loss/giou: 0.27281  ,  Loss/l1: 0.02694  ,  Loss/location: 3.26231  ,  IoU: 0.74565  ,  grad_norm: 15.71638  ,  mIoU: 0.75368  ,  mIoU10: 0.76044  ,  mIoU100: 0.76997
+[train: 1, 34 / 125] FPS: 5.7 (7.1)  ,  DataTime: 2.120 (37.179)  ,  ForwardTime: 5.274  ,  TotalTime: 44.573  ,  Loss/total: 0.52196  ,  Loss/giou: 0.26098  ,  Loss/l1: 0.02723  ,  Loss/location: 3.16378  ,  IoU: 0.75650  ,  grad_norm: 15.71638  ,  mIoU: 0.76462  ,  mIoU10: 0.77047  ,  mIoU100: 0.76417
+[train: 1, 35 / 125] FPS: 5.8 (6.5)  ,  DataTime: 2.122 (37.099)  ,  ForwardTime: 5.199  ,  TotalTime: 44.420  ,  Loss/total: 0.57294  ,  Loss/giou: 0.28647  ,  Loss/l1: 0.03532  ,  Loss/location: 3.36057  ,  IoU: 0.73793  ,  grad_norm: 15.71366  ,  mIoU: 0.74655  ,  mIoU10: 0.74961  ,  mIoU100: 0.75415
+[train: 1, 35 / 125] FPS: 5.8 (6.5)  ,  DataTime: 2.223 (34.811)  ,  ForwardTime: 7.385  ,  TotalTime: 44.420  ,  Loss/total: 0.55045  ,  Loss/giou: 0.27523  ,  Loss/l1: 0.03330  ,  Loss/location: 3.26104  ,  IoU: 0.74779  ,  grad_norm: 15.71366  ,  mIoU: 0.75397  ,  mIoU10: 0.75262  ,  mIoU100: 0.74616
+[train: 1, 35 / 125] FPS: 5.8 (6.5)  ,  DataTime: 2.062 (37.137)  ,  ForwardTime: 5.221  ,  TotalTime: 44.420  ,  Loss/total: 0.53336  ,  Loss/giou: 0.26668  ,  Loss/l1: 0.03014  ,  Loss/location: 3.20157  ,  IoU: 0.75311  ,  grad_norm: 15.71366  ,  mIoU: 0.76104  ,  mIoU10: 0.76934  ,  mIoU100: 0.76408[train: 1, 35 / 125] FPS: 5.8 (6.5)  ,  DataTime: 1.829 (37.354)  ,  ForwardTime: 5.237  ,  TotalTime: 44.420  ,  Loss/total: 0.55438  ,  Loss/giou: 0.27719  ,  Loss/l1: 0.02925  ,  Loss/location: 3.28145  ,  IoU: 0.74314  ,  grad_norm: 15.71366  ,  mIoU: 0.75116  ,  mIoU10: 0.75979  ,  mIoU100: 0.76944
+
+[train: 1, 36 / 125] FPS: 5.8 (6.4)  ,  DataTime: 2.065 (36.942)  ,  ForwardTime: 5.284  ,  TotalTime: 44.291  ,  Loss/total: 0.57336  ,  Loss/giou: 0.28668  ,  Loss/l1: 0.03580  ,  Loss/location: 3.37233  ,  IoU: 0.73782  ,  grad_norm: 15.63396  ,  mIoU: 0.74597  ,  mIoU10: 0.74930  ,  mIoU100: 0.75393
+[train: 1, 36 / 125] FPS: 5.8 (6.4)  ,  DataTime: 1.780 (37.376)  ,  ForwardTime: 5.135  ,  TotalTime: 44.291  ,  Loss/total: 0.56193  ,  Loss/giou: 0.28096  ,  Loss/l1: 0.03127  ,  Loss/location: 3.29363  ,  IoU: 0.74096  ,  grad_norm: 15.63396  ,  mIoU: 0.74900  ,  mIoU10: 0.75867  ,  mIoU100: 0.76887
+[train: 1, 36 / 125] FPS: 5.8 (6.4)  ,  DataTime: 2.166 (34.829)  ,  ForwardTime: 7.296  ,  TotalTime: 44.291  ,  Loss/total: 0.54597  ,  Loss/giou: 0.27298  ,  Loss/l1: 0.03285  ,  Loss/location: 3.24726  ,  IoU: 0.74959  ,  grad_norm: 15.63396  ,  mIoU: 0.75565  ,  mIoU10: 0.75201  ,  mIoU100: 0.74643
+[train: 1, 36 / 125] FPS: 5.8 (6.4)  ,  DataTime: 2.007 (37.088)  ,  ForwardTime: 5.196  ,  TotalTime: 44.291  ,  Loss/total: 0.53394  ,  Loss/giou: 0.26697  ,  Loss/l1: 0.03123  ,  Loss/location: 3.20013  ,  IoU: 0.75372  ,  grad_norm: 15.63396  ,  mIoU: 0.76144  ,  mIoU10: 0.76830  ,  mIoU100: 0.76400
+[train: 1, 37 / 125] FPS: 5.7 (3.9)  ,  DataTime: 2.695 (34.861)  ,  ForwardTime: 7.295  ,  TotalTime: 44.850  ,  Loss/total: 0.55212  ,  Loss/giou: 0.27606  ,  Loss/l1: 0.03438  ,  Loss/location: 3.25844  ,  IoU: 0.74733  ,  grad_norm: 15.62730  ,  mIoU: 0.75326  ,  mIoU10: 0.75120  ,  mIoU100: 0.74661
+[train: 1, 37 / 125] FPS: 5.7 (3.9)  ,  DataTime: 1.859 (37.406)  ,  ForwardTime: 5.585  ,  TotalTime: 44.850  ,  Loss/total: 0.56407  ,  Loss/giou: 0.28203  ,  Loss/l1: 0.03128  ,  Loss/location: 3.29402  ,  IoU: 0.73988  ,  grad_norm: 15.62730  ,  mIoU: 0.74784  ,  mIoU10: 0.75747  ,  mIoU100: 0.76830
+[train: 1, 37 / 125] FPS: 5.7 (3.9)  ,  DataTime: 2.620 (37.048)  ,  ForwardTime: 5.183  ,  TotalTime: 44.850  ,  Loss/total: 0.57959  ,  Loss/giou: 0.28980  ,  Loss/l1: 0.03714  ,  Loss/location: 3.39104  ,  IoU: 0.73581  ,  grad_norm: 15.62730  ,  mIoU: 0.74430  ,  mIoU10: 0.74870  ,  mIoU100: 0.75367
+[train: 1, 37 / 125] FPS: 5.7 (3.9)  ,  DataTime: 2.272 (37.092)  ,  ForwardTime: 5.487  ,  TotalTime: 44.850  ,  Loss/total: 0.54043  ,  Loss/giou: 0.27021  ,  Loss/l1: 0.03306  ,  Loss/location: 3.21900  ,  IoU: 0.75194  ,  grad_norm: 15.62730  ,  mIoU: 0.75949  ,  mIoU10: 0.76699  ,  mIoU100: 0.76388
+[train: 1, 38 / 125] FPS: 5.7 (6.4)  ,  DataTime: 2.215 (37.091)  ,  ForwardTime: 5.413  ,  TotalTime: 44.719  ,  Loss/total: 0.53427  ,  Loss/giou: 0.26714  ,  Loss/l1: 0.03248  ,  Loss/location: 3.20666  ,  IoU: 0.75450  ,  grad_norm: 15.63132  ,  mIoU: 0.76210  ,  mIoU10: 0.76599  ,  mIoU100: 0.76383
+[train: 1, 38 / 125] FPS: 5.7 (6.4)  ,  DataTime: 1.813 (37.310)  ,  ForwardTime: 5.597  ,  TotalTime: 44.719  ,  Loss/total: 0.56516  ,  Loss/giou: 0.28258  ,  Loss/l1: 0.03109  ,  Loss/location: 3.29742  ,  IoU: 0.73912  ,  grad_norm: 15.63132  ,  mIoU: 0.74685  ,  mIoU10: 0.75628  ,  mIoU100: 0.76773
+[train: 1, 38 / 125] FPS: 5.7 (6.4)  ,  DataTime: 2.554 (37.064)  ,  ForwardTime: 5.101  ,  TotalTime: 44.719  ,  Loss/total: 0.57665  ,  Loss/giou: 0.28832  ,  Loss/l1: 0.03664  ,  Loss/location: 3.38218  ,  IoU: 0.73684  ,  grad_norm: 15.63132  ,  mIoU: 0.74550  ,  mIoU10: 0.74842  ,  mIoU100: 0.75345
+[train: 1, 38 / 125] FPS: 5.7 (6.4)  ,  DataTime: 2.627 (34.823)  ,  ForwardTime: 7.270  ,  TotalTime: 44.719  ,  Loss/total: 0.56011  ,  Loss/giou: 0.28005  ,  Loss/l1: 0.03489  ,  Loss/location: 3.27854  ,  IoU: 0.74395  ,  grad_norm: 15.63132  ,  mIoU: 0.74969  ,  mIoU10: 0.75040  ,  mIoU100: 0.74669
+[train: 1, 39 / 125] FPS: 5.7 (5.0)  ,  DataTime: 2.562 (34.815)  ,  ForwardTime: 7.507  ,  TotalTime: 44.884  ,  Loss/total: 0.55622  ,  Loss/giou: 0.27811  ,  Loss/l1: 0.03435  ,  Loss/location: 3.26709  ,  IoU: 0.74544  ,  grad_norm: 15.83737  ,  mIoU: 0.75141  ,  mIoU10: 0.74975  ,  mIoU100: 0.74681
+[train: 1, 39 / 125] FPS: 5.7 (5.0)  ,  DataTime: 2.491 (37.367)  ,  ForwardTime: 5.026  ,  TotalTime: 44.884  ,  Loss/total: 0.57501  ,  Loss/giou: 0.28751  ,  Loss/l1: 0.03628  ,  Loss/location: 3.36983  ,  IoU: 0.73756  ,  grad_norm: 15.83737  ,  mIoU: 0.74648  ,  mIoU10: 0.74807  ,  mIoU100: 0.75327
+[train: 1, 39 / 125] FPS: 5.7 (5.0)  ,  DataTime: 1.796 (37.236)  ,  ForwardTime: 5.852  ,  TotalTime: 44.884  ,  Loss/total: 0.57251  ,  Loss/giou: 0.28625  ,  Loss/l1: 0.03177  ,  Loss/location: 3.30567  ,  IoU: 0.73629  ,  grad_norm: 15.83737  ,  mIoU: 0.74424  ,  mIoU10: 0.75483  ,  mIoU100: 0.76713
+[train: 1, 39 / 125] FPS: 5.7 (5.0)  ,  DataTime: 2.161 (37.156)  ,  ForwardTime: 5.567  ,  TotalTime: 44.885  ,  Loss/total: 0.53444  ,  Loss/giou: 0.26722  ,  Loss/l1: 0.03226  ,  Loss/location: 3.20406  ,  IoU: 0.75421  ,  grad_norm: 15.83737  ,  mIoU: 0.76220  ,  mIoU10: 0.76517  ,  mIoU100: 0.76379
+[train: 1, 40 / 125] FPS: 5.7 (4.2)  ,  DataTime: 1.798 (37.245)  ,  ForwardTime: 6.227  ,  TotalTime: 45.270  ,  Loss/total: 0.56637  ,  Loss/giou: 0.28319  ,  Loss/l1: 0.03127  ,  Loss/location: 3.29351  ,  IoU: 0.73888  ,  grad_norm: 15.83240  ,  mIoU: 0.74673  ,  mIoU10: 0.75374  ,  mIoU100: 0.76662
+[train: 1, 40 / 125] FPS: 5.7 (4.2)  ,  DataTime: 2.432 (37.889)  ,  ForwardTime: 4.950  ,  TotalTime: 45.270  ,  Loss/total: 0.57157  ,  Loss/giou: 0.28578  ,  Loss/l1: 0.03579  ,  Loss/location: 3.35455  ,  IoU: 0.73896  ,  grad_norm: 15.83240  ,  mIoU: 0.74841  ,  mIoU10: 0.74779  ,  mIoU100: 0.75315
+[train: 1, 40 / 125] FPS: 5.7 (4.2)  ,  DataTime: 2.500 (34.776)  ,  ForwardTime: 7.994  ,  TotalTime: 45.270  ,  Loss/total: 0.55522  ,  Loss/giou: 0.27761  ,  Loss/l1: 0.03402  ,  Loss/location: 3.25804  ,  IoU: 0.74572  ,  grad_norm: 15.83240  ,  mIoU: 0.75198  ,  mIoU10: 0.74944  ,  mIoU100: 0.74694
+[train: 1, 40 / 125] FPS: 5.7 (4.2)  ,  DataTime: 2.227 (37.046)  ,  ForwardTime: 5.997  ,  TotalTime: 45.270  ,  Loss/total: 0.53447  ,  Loss/giou: 0.26724  ,  Loss/l1: 0.03200  ,  Loss/location: 3.20239  ,  IoU: 0.75398  ,  grad_norm: 15.83240  ,  mIoU: 0.76203  ,  mIoU10: 0.76457  ,  mIoU100: 0.76375
+[train: 1, 41 / 125] FPS: 5.7 (6.2)  ,  DataTime: 2.249 (37.027)  ,  ForwardTime: 5.903  ,  TotalTime: 45.179  ,  Loss/total: 0.53226  ,  Loss/giou: 0.26613  ,  Loss/l1: 0.03164  ,  Loss/location: 3.20065  ,  IoU: 0.75474  ,  grad_norm: 15.80182  ,  mIoU: 0.76294  ,  mIoU10: 0.76425  ,  mIoU100: 0.76373
+[train: 1, 41 / 125] FPS: 5.7 (6.2)  ,  DataTime: 2.374 (37.843)  ,  ForwardTime: 4.962  ,  TotalTime: 45.179  ,  Loss/total: 0.57201  ,  Loss/giou: 0.28601  ,  Loss/l1: 0.03695  ,  Loss/location: 3.35836  ,  IoU: 0.73945  ,  grad_norm: 15.80182  ,  mIoU: 0.74889  ,  mIoU10: 0.74760  ,  mIoU100: 0.75305
+[train: 1, 41 / 125] FPS: 5.7 (6.2)  ,  DataTime: 2.442 (34.813)  ,  ForwardTime: 7.925  ,  TotalTime: 45.180  ,  Loss/total: 0.55463  ,  Loss/giou: 0.27732  ,  Loss/l1: 0.03419  ,  Loss/location: 3.25473  ,  IoU: 0.74621  ,  grad_norm: 15.80182  ,  mIoU: 0.75254  ,  mIoU10: 0.74913  ,  mIoU100: 0.74708[train: 1, 41 / 125] FPS: 5.7 (6.2)  ,  DataTime: 1.788 (37.267)  ,  ForwardTime: 6.124  ,  TotalTime: 45.179  ,  Loss/total: 0.57070  ,  Loss/giou: 0.28535  ,  Loss/l1: 0.03252  ,  Loss/location: 3.30171  ,  IoU: 0.73793  ,  grad_norm: 15.80182  ,  mIoU: 0.74578  ,  mIoU10: 0.75262  ,  mIoU100: 0.76611
+
+[train: 1, 42 / 125] FPS: 5.7 (5.6)  ,  DataTime: 2.198 (36.917)  ,  ForwardTime: 6.075  ,  TotalTime: 45.190  ,  Loss/total: 0.53297  ,  Loss/giou: 0.26648  ,  Loss/l1: 0.03144  ,  Loss/location: 3.20436  ,  IoU: 0.75417  ,  grad_norm: 15.97241  ,  mIoU: 0.76249  ,  mIoU10: 0.76390  ,  mIoU100: 0.76370
+[train: 1, 42 / 125] FPS: 5.7 (5.6)  ,  DataTime: 1.776 (37.311)  ,  ForwardTime: 6.103  ,  TotalTime: 45.190  ,  Loss/total: 0.56780  ,  Loss/giou: 0.28390  ,  Loss/l1: 0.03230  ,  Loss/location: 3.28997  ,  IoU: 0.73918  ,  grad_norm: 15.97241  ,  mIoU: 0.74705  ,  mIoU10: 0.75189  ,  mIoU100: 0.76566
+[train: 1, 42 / 125] FPS: 5.7 (5.6)  ,  DataTime: 2.386 (34.842)  ,  ForwardTime: 7.962  ,  TotalTime: 45.190  ,  Loss/total: 0.56061  ,  Loss/giou: 0.28030  ,  Loss/l1: 0.03434  ,  Loss/location: 3.26280  ,  IoU: 0.74369  ,  grad_norm: 15.97241  ,  mIoU: 0.74986  ,  mIoU10: 0.74871  ,  mIoU100: 0.74715
+[train: 1, 42 / 125] FPS: 5.7 (5.6)  ,  DataTime: 2.320 (37.983)  ,  ForwardTime: 4.887  ,  TotalTime: 45.190  ,  Loss/total: 0.56942  ,  Loss/giou: 0.28471  ,  Loss/l1: 0.03654  ,  Loss/location: 3.35441  ,  IoU: 0.74040  ,  grad_norm: 15.97241  ,  mIoU: 0.74952  ,  mIoU10: 0.74768  ,  mIoU100: 0.75296
+[train: 1, 43 / 125] FPS: 5.7 (6.2)  ,  DataTime: 2.332 (34.811)  ,  ForwardTime: 7.958  ,  TotalTime: 45.101  ,  Loss/total: 0.56139  ,  Loss/giou: 0.28070  ,  Loss/l1: 0.03456  ,  Loss/location: 3.26272  ,  IoU: 0.74361  ,  grad_norm: 15.96385  ,  mIoU: 0.75003  ,  mIoU10: 0.74850  ,  mIoU100: 0.74721
+[train: 1, 43 / 125] FPS: 5.7 (6.2)  ,  DataTime: 2.149 (36.850)  ,  ForwardTime: 6.102  ,  TotalTime: 45.101  ,  Loss/total: 0.53277  ,  Loss/giou: 0.26639  ,  Loss/l1: 0.03122  ,  Loss/location: 3.20568  ,  IoU: 0.75408  ,  grad_norm: 15.96385  ,  mIoU: 0.76234  ,  mIoU10: 0.76381  ,  mIoU100: 0.76367
+[train: 1, 43 / 125] FPS: 5.7 (6.2)  ,  DataTime: 1.832 (37.263)  ,  ForwardTime: 6.006  ,  TotalTime: 45.101  ,  Loss/total: 0.57156  ,  Loss/giou: 0.28578  ,  Loss/l1: 0.03285  ,  Loss/location: 3.30260  ,  IoU: 0.73775  ,  grad_norm: 15.96385  ,  mIoU: 0.74552  ,  mIoU10: 0.75122  ,  mIoU100: 0.76519
+[train: 1, 43 / 125] FPS: 5.7 (6.2)  ,  DataTime: 2.267 (37.942)  ,  ForwardTime: 4.892  ,  TotalTime: 45.101  ,  Loss/total: 0.56653  ,  Loss/giou: 0.28326  ,  Loss/l1: 0.03611  ,  Loss/location: 3.34638  ,  IoU: 0.74146  ,  grad_norm: 15.96385  ,  mIoU: 0.75029  ,  mIoU10: 0.74812  ,  mIoU100: 0.75290
+[train: 1, 44 / 125] FPS: 5.7 (5.2)  ,  DataTime: 1.938 (37.334)  ,  ForwardTime: 5.916  ,  TotalTime: 45.187  ,  Loss/total: 0.56791  ,  Loss/giou: 0.28396  ,  Loss/l1: 0.03249  ,  Loss/location: 3.29234  ,  IoU: 0.73923  ,  grad_norm: 15.92212  ,  mIoU: 0.74697  ,  mIoU10: 0.75060  ,  mIoU100: 0.76478
+[train: 1, 44 / 125] FPS: 5.7 (5.2)  ,  DataTime: 2.281 (34.777)  ,  ForwardTime: 8.128  ,  TotalTime: 45.187  ,  Loss/total: 0.56449  ,  Loss/giou: 0.28224  ,  Loss/l1: 0.03501  ,  Loss/location: 3.27064  ,  IoU: 0.74255  ,  grad_norm: 15.92212  ,  mIoU: 0.74929  ,  mIoU10: 0.74820  ,  mIoU100: 0.74726
+[train: 1, 44 / 125] FPS: 5.7 (5.2)  ,  DataTime: 2.102 (36.836)  ,  ForwardTime: 6.249  ,  TotalTime: 45.187  ,  Loss/total: 0.53146  ,  Loss/giou: 0.26573  ,  Loss/l1: 0.03093  ,  Loss/location: 3.20733  ,  IoU: 0.75445  ,  grad_norm: 15.92212  ,  mIoU: 0.76253  ,  mIoU10: 0.76362  ,  mIoU100: 0.76364
+[train: 1, 44 / 125] FPS: 5.7 (5.2)  ,  DataTime: 2.218 (38.121)  ,  ForwardTime: 4.848  ,  TotalTime: 45.187  ,  Loss/total: 0.56221  ,  Loss/giou: 0.28110  ,  Loss/l1: 0.03558  ,  Loss/location: 3.32752  ,  IoU: 0.74323  ,  grad_norm: 15.92212  ,  mIoU: 0.75245  ,  mIoU10: 0.74890  ,  mIoU100: 0.75289
+[train: 1, 45 / 125] FPS: 5.7 (6.1)  ,  DataTime: 1.897 (37.361)  ,  ForwardTime: 5.850  ,  TotalTime: 45.108  ,  Loss/total: 0.57102  ,  Loss/giou: 0.28551  ,  Loss/l1: 0.03270  ,  Loss/location: 3.29663  ,  IoU: 0.73809  ,  grad_norm: 15.98253  ,  mIoU: 0.74599  ,  mIoU10: 0.75010  ,  mIoU100: 0.76436
+[train: 1, 45 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.233 (34.768)  ,  ForwardTime: 8.108  ,  TotalTime: 45.108  ,  Loss/total: 0.56073  ,  Loss/giou: 0.28036  ,  Loss/l1: 0.03455  ,  Loss/location: 3.25730  ,  IoU: 0.74405  ,  grad_norm: 15.98253  ,  mIoU: 0.75130  ,  mIoU10: 0.74806  ,  mIoU100: 0.74735
+[train: 1, 45 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.172 (38.150)  ,  ForwardTime: 4.786  ,  TotalTime: 45.108  ,  Loss/total: 0.56118  ,  Loss/giou: 0.28059  ,  Loss/l1: 0.03546  ,  Loss/location: 3.32599  ,  IoU: 0.74348  ,  grad_norm: 15.98253  ,  mIoU: 0.75275  ,  mIoU10: 0.74947  ,  mIoU100: 0.75289
+[train: 1, 45 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.057 (36.850)  ,  ForwardTime: 6.201  ,  TotalTime: 45.108  ,  Loss/total: 0.53083  ,  Loss/giou: 0.26541  ,  Loss/l1: 0.03069  ,  Loss/location: 3.19798  ,  IoU: 0.75460  ,  grad_norm: 15.98253  ,  mIoU: 0.76265  ,  mIoU10: 0.76372  ,  mIoU100: 0.76362
+[train: 1, 46 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.126 (38.142)  ,  ForwardTime: 4.783  ,  TotalTime: 45.051  ,  Loss/total: 0.56345  ,  Loss/giou: 0.28173  ,  Loss/l1: 0.03570  ,  Loss/location: 3.33527  ,  IoU: 0.74249  ,  grad_norm: 16.03502  ,  mIoU: 0.75167  ,  mIoU10: 0.74996  ,  mIoU100: 0.75286
+[train: 1, 46 / 125] FPS: 5.7 (6.0)  ,  DataTime: 1.858 (37.369)  ,  ForwardTime: 5.824  ,  TotalTime: 45.051  ,  Loss/total: 0.57215  ,  Loss/giou: 0.28607  ,  Loss/l1: 0.03253  ,  Loss/location: 3.29644  ,  IoU: 0.73732  ,  grad_norm: 16.03502  ,  mIoU: 0.74546  ,  mIoU10: 0.74972  ,  mIoU100: 0.76395
+[train: 1, 46 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.186 (34.814)  ,  ForwardTime: 8.051  ,  TotalTime: 45.051  ,  Loss/total: 0.57058  ,  Loss/giou: 0.28529  ,  Loss/l1: 0.03548  ,  Loss/location: 3.28349  ,  IoU: 0.74029  ,  grad_norm: 16.03502  ,  mIoU: 0.74765  ,  mIoU10: 0.74743  ,  mIoU100: 0.74736
+[train: 1, 46 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.014 (36.929)  ,  ForwardTime: 6.108  ,  TotalTime: 45.051  ,  Loss/total: 0.52772  ,  Loss/giou: 0.26386  ,  Loss/l1: 0.03033  ,  Loss/location: 3.18956  ,  IoU: 0.75597  ,  grad_norm: 16.03502  ,  mIoU: 0.76402  ,  mIoU10: 0.76393  ,  mIoU100: 0.76363
+[train: 1, 47 / 125] FPS: 5.7 (5.6)  ,  DataTime: 1.821 (37.452)  ,  ForwardTime: 5.792  ,  TotalTime: 45.065  ,  Loss/total: 0.57564  ,  Loss/giou: 0.28782  ,  Loss/l1: 0.03251  ,  Loss/location: 3.30496  ,  IoU: 0.73546  ,  grad_norm: 16.05604  ,  mIoU: 0.74321  ,  mIoU10: 0.74922  ,  mIoU100: 0.76351
+[train: 1, 47 / 125] FPS: 5.7 (5.6)  ,  DataTime: 2.142 (34.896)  ,  ForwardTime: 8.027  ,  TotalTime: 45.065  ,  Loss/total: 0.57686  ,  Loss/giou: 0.28843  ,  Loss/l1: 0.03584  ,  Loss/location: 3.30576  ,  IoU: 0.73751  ,  grad_norm: 16.05604  ,  mIoU: 0.74501  ,  mIoU10: 0.74673  ,  mIoU100: 0.74731
+[train: 1, 47 / 125] FPS: 5.7 (5.6)  ,  DataTime: 1.973 (36.942)  ,  ForwardTime: 6.150  ,  TotalTime: 45.065  ,  Loss/total: 0.53828  ,  Loss/giou: 0.26914  ,  Loss/l1: 0.03163  ,  Loss/location: 3.22650  ,  IoU: 0.75188  ,  grad_norm: 16.05604  ,  mIoU: 0.75990  ,  mIoU10: 0.76388  ,  mIoU100: 0.76355
+[train: 1, 47 / 125] FPS: 5.7 (5.6)  ,  DataTime: 2.082 (38.257)  ,  ForwardTime: 4.727  ,  TotalTime: 45.065  ,  Loss/total: 0.56387  ,  Loss/giou: 0.28193  ,  Loss/l1: 0.03550  ,  Loss/location: 3.32943  ,  IoU: 0.74223  ,  grad_norm: 16.05604  ,  mIoU: 0.75180  ,  mIoU10: 0.75059  ,  mIoU100: 0.75284
+[train: 1, 48 / 125] FPS: 5.7 (6.2)  ,  DataTime: 1.785 (37.501)  ,  ForwardTime: 5.704  ,  TotalTime: 44.990  ,  Loss/total: 0.57256  ,  Loss/giou: 0.28628  ,  Loss/l1: 0.03219  ,  Loss/location: 3.29933  ,  IoU: 0.73664  ,  grad_norm: 16.08280  ,  mIoU: 0.74472  ,  mIoU10: 0.74896  ,  mIoU100: 0.76312
+[train: 1, 48 / 125] FPS: 5.7 (6.2)  ,  DataTime: 2.101 (34.988)  ,  ForwardTime: 7.901  ,  TotalTime: 44.990  ,  Loss/total: 0.57851  ,  Loss/giou: 0.28926  ,  Loss/l1: 0.03599  ,  Loss/location: 3.31189  ,  IoU: 0.73691  ,  grad_norm: 16.08280  ,  mIoU: 0.74448  ,  mIoU10: 0.74627  ,  mIoU100: 0.74725
+[train: 1, 48 / 125] FPS: 5.7 (6.2)  ,  DataTime: 2.041 (38.278)  ,  ForwardTime: 4.671  ,  TotalTime: 44.990  ,  Loss/total: 0.55867  ,  Loss/giou: 0.27934  ,  Loss/l1: 0.03498  ,  Loss/location: 3.31775  ,  IoU: 0.74437  ,  grad_norm: 16.08280  ,  mIoU: 0.75379  ,  mIoU10: 0.75132  ,  mIoU100: 0.75286
+[train: 1, 48 / 125] FPS: 5.7 (6.2)  ,  DataTime: 1.935 (36.857)  ,  ForwardTime: 6.198  ,  TotalTime: 44.990  ,  Loss/total: 0.54169  ,  Loss/giou: 0.27085  ,  Loss/l1: 0.03203  ,  Loss/location: 3.23614  ,  IoU: 0.75031  ,  grad_norm: 16.08280  ,  mIoU: 0.75811  ,  mIoU10: 0.76344  ,  mIoU100: 0.76344
+[train: 1, 49 / 125] FPS: 5.7 (4.4)  ,  DataTime: 2.518 (34.973)  ,  ForwardTime: 7.772  ,  TotalTime: 45.263  ,  Loss/total: 0.57875  ,  Loss/giou: 0.28938  ,  Loss/l1: 0.03573  ,  Loss/location: 3.30956  ,  IoU: 0.73660  ,  grad_norm: 16.10780  ,  mIoU: 0.74436  ,  mIoU10: 0.74567  ,  mIoU100: 0.74719[train: 1, 49 / 125] FPS: 5.7 (4.4)  ,  DataTime: 2.103 (36.811)  ,  ForwardTime: 6.349  ,  TotalTime: 45.263  ,  Loss/total: 0.53795  ,  Loss/giou: 0.26897  ,  Loss/l1: 0.03177  ,  Loss/location: 3.22549  ,  IoU: 0.75199  ,  grad_norm: 16.10780  ,  mIoU: 0.76002  ,  mIoU10: 0.76320  ,  mIoU100: 0.76337
+
+[train: 1, 49 / 125] FPS: 5.7 (4.4)  ,  DataTime: 1.827 (37.496)  ,  ForwardTime: 5.940  ,  TotalTime: 45.262  ,  Loss/total: 0.57274  ,  Loss/giou: 0.28637  ,  Loss/l1: 0.03229  ,  Loss/location: 3.29971  ,  IoU: 0.73655  ,  grad_norm: 16.10780  ,  mIoU: 0.74480  ,  mIoU10: 0.74892  ,  mIoU100: 0.76274
+[train: 1, 49 / 125] FPS: 5.7 (4.4)  ,  DataTime: 2.416 (38.130)  ,  ForwardTime: 4.717  ,  TotalTime: 45.262  ,  Loss/total: 0.55567  ,  Loss/giou: 0.27783  ,  Loss/l1: 0.03458  ,  Loss/location: 3.31303  ,  IoU: 0.74548  ,  grad_norm: 16.10780  ,  mIoU: 0.75485  ,  mIoU10: 0.75205  ,  mIoU100: 0.75290
+[train: 1, 50 / 125] FPS: 5.7 (6.6)  ,  DataTime: 2.369 (38.093)  ,  ForwardTime: 4.675  ,  TotalTime: 45.138  ,  Loss/total: 0.55285  ,  Loss/giou: 0.27642  ,  Loss/l1: 0.03424  ,  Loss/location: 3.30733  ,  IoU: 0.74652  ,  grad_norm: 16.10269  ,  mIoU: 0.75596  ,  mIoU10: 0.75274  ,  mIoU100: 0.75296
+[train: 1, 50 / 125] FPS: 5.7 (6.6)  ,  DataTime: 1.792 (37.493)  ,  ForwardTime: 5.853  ,  TotalTime: 45.138  ,  Loss/total: 0.56793  ,  Loss/giou: 0.28396  ,  Loss/l1: 0.03198  ,  Loss/location: 3.28860  ,  IoU: 0.73863  ,  grad_norm: 16.10269  ,  mIoU: 0.74661  ,  mIoU10: 0.74886  ,  mIoU100: 0.76242
+[train: 1, 50 / 125] FPS: 5.7 (6.6)  ,  DataTime: 2.063 (36.730)  ,  ForwardTime: 6.345  ,  TotalTime: 45.138  ,  Loss/total: 0.53980  ,  Loss/giou: 0.26990  ,  Loss/l1: 0.03178  ,  Loss/location: 3.22626  ,  IoU: 0.75117  ,  grad_norm: 16.10269  ,  mIoU: 0.75935  ,  mIoU10: 0.76291  ,  mIoU100: 0.76329[train: 1, 50 / 125] FPS: 5.7 (6.6)  ,  DataTime: 2.470 (34.882)  ,  ForwardTime: 7.786  ,  TotalTime: 45.138  ,  Loss/total: 0.57958  ,  Loss/giou: 0.28979  ,  Loss/l1: 0.03573  ,  Loss/location: 3.31726  ,  IoU: 0.73625  ,  grad_norm: 16.10269  ,  mIoU: 0.74401  ,  mIoU10: 0.74500  ,  mIoU100: 0.74713
+
+[train: 1, 51 / 125] FPS: 5.7 (6.8)  ,  DataTime: 2.423 (34.888)  ,  ForwardTime: 7.680  ,  TotalTime: 44.991  ,  Loss/total: 0.57979  ,  Loss/giou: 0.28990  ,  Loss/l1: 0.03554  ,  Loss/location: 3.31700  ,  IoU: 0.73594  ,  grad_norm: 16.08565  ,  mIoU: 0.74326  ,  mIoU10: 0.74422  ,  mIoU100: 0.74705
+[train: 1, 51 / 125] FPS: 5.7 (6.8)  ,  DataTime: 2.024 (36.716)  ,  ForwardTime: 6.251  ,  TotalTime: 44.991  ,  Loss/total: 0.53503  ,  Loss/giou: 0.26752  ,  Loss/l1: 0.03135  ,  Loss/location: 3.21297  ,  IoU: 0.75318  ,  grad_norm: 16.08565  ,  mIoU: 0.76154  ,  mIoU10: 0.76277  ,  mIoU100: 0.76325
+[train: 1, 51 / 125] FPS: 5.7 (6.8)  ,  DataTime: 1.788 (37.431)  ,  ForwardTime: 5.772  ,  TotalTime: 44.991  ,  Loss/total: 0.56558  ,  Loss/giou: 0.28279  ,  Loss/l1: 0.03170  ,  Loss/location: 3.28373  ,  IoU: 0.73949  ,  grad_norm: 16.08565  ,  mIoU: 0.74719  ,  mIoU10: 0.74894  ,  mIoU100: 0.76212
+[train: 1, 51 / 125] FPS: 5.7 (6.8)  ,  DataTime: 2.324 (38.049)  ,  ForwardTime: 4.617  ,  TotalTime: 44.991  ,  Loss/total: 0.55529  ,  Loss/giou: 0.27765  ,  Loss/l1: 0.03414  ,  Loss/location: 3.31278  ,  IoU: 0.74543  ,  grad_norm: 16.08565  ,  mIoU: 0.75475  ,  mIoU10: 0.75325  ,  mIoU100: 0.75300
+[train: 1, 52 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.281 (38.019)  ,  ForwardTime: 4.627  ,  TotalTime: 44.926  ,  Loss/total: 0.55676  ,  Loss/giou: 0.27838  ,  Loss/l1: 0.03433  ,  Loss/location: 3.31821  ,  IoU: 0.74474  ,  grad_norm: 16.08236  ,  mIoU: 0.75379  ,  mIoU10: 0.75360  ,  mIoU100: 0.75301
+[train: 1, 52 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.378 (34.875)  ,  ForwardTime: 7.674  ,  TotalTime: 44.927  ,  Loss/total: 0.57886  ,  Loss/giou: 0.28943  ,  Loss/l1: 0.03555  ,  Loss/location: 3.31414  ,  IoU: 0.73653  ,  grad_norm: 16.08236  ,  mIoU: 0.74352  ,  mIoU10: 0.74369  ,  mIoU100: 0.74698
+[train: 1, 52 / 125] FPS: 5.7 (6.1)  ,  DataTime: 1.779 (37.394)  ,  ForwardTime: 5.754  ,  TotalTime: 44.927  ,  Loss/total: 0.56833  ,  Loss/giou: 0.28416  ,  Loss/l1: 0.03223  ,  Loss/location: 3.29134  ,  IoU: 0.73877  ,  grad_norm: 16.08236  ,  mIoU: 0.74654  ,  mIoU10: 0.74885  ,  mIoU100: 0.76182
+[train: 1, 52 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.101 (36.665)  ,  ForwardTime: 6.161  ,  TotalTime: 44.927  ,  Loss/total: 0.53703  ,  Loss/giou: 0.26851  ,  Loss/l1: 0.03181  ,  Loss/location: 3.22160  ,  IoU: 0.75255  ,  grad_norm: 16.08236  ,  mIoU: 0.76055  ,  mIoU10: 0.76257  ,  mIoU100: 0.76320
+[train: 1, 53 / 125] FPS: 5.7 (6.5)  ,  DataTime: 2.116 (36.630)  ,  ForwardTime: 6.074  ,  TotalTime: 44.820  ,  Loss/total: 0.53950  ,  Loss/giou: 0.26975  ,  Loss/l1: 0.03186  ,  Loss/location: 3.22321  ,  IoU: 0.75151  ,  grad_norm: 16.17438  ,  mIoU: 0.75966  ,  mIoU10: 0.76229  ,  mIoU100: 0.76313
+[train: 1, 53 / 125] FPS: 5.7 (6.5)  ,  DataTime: 1.773 (37.357)  ,  ForwardTime: 5.690  ,  TotalTime: 44.820  ,  Loss/total: 0.56936  ,  Loss/giou: 0.28468  ,  Loss/l1: 0.03235  ,  Loss/location: 3.29479  ,  IoU: 0.73854  ,  grad_norm: 16.17438  ,  mIoU: 0.74650  ,  mIoU10: 0.74889  ,  mIoU100: 0.76153
+[train: 1, 53 / 125] FPS: 5.7 (6.5)  ,  DataTime: 2.239 (37.950)  ,  ForwardTime: 4.630  ,  TotalTime: 44.820  ,  Loss/total: 0.56227  ,  Loss/giou: 0.28114  ,  Loss/l1: 0.03544  ,  Loss/location: 3.32820  ,  IoU: 0.74306  ,  grad_norm: 16.17438  ,  mIoU: 0.75213  ,  mIoU10: 0.75372  ,  mIoU100: 0.75299
+[train: 1, 53 / 125] FPS: 5.7 (6.5)  ,  DataTime: 2.335 (34.847)  ,  ForwardTime: 7.638  ,  TotalTime: 44.820  ,  Loss/total: 0.57740  ,  Loss/giou: 0.28870  ,  Loss/l1: 0.03523  ,  Loss/location: 3.30942  ,  IoU: 0.73698  ,  grad_norm: 16.17438  ,  mIoU: 0.74402  ,  mIoU10: 0.74321  ,  mIoU100: 0.74693
+[train: 1, 54 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.199 (37.871)  ,  ForwardTime: 4.716  ,  TotalTime: 44.786  ,  Loss/total: 0.56356  ,  Loss/giou: 0.28178  ,  Loss/l1: 0.03547  ,  Loss/location: 3.33074  ,  IoU: 0.74246  ,  grad_norm: 16.13709  ,  mIoU: 0.75146  ,  mIoU10: 0.75360  ,  mIoU100: 0.75297
+[train: 1, 54 / 125] FPS: 5.7 (6.0)  ,  DataTime: 1.780 (37.393)  ,  ForwardTime: 5.613  ,  TotalTime: 44.786  ,  Loss/total: 0.56584  ,  Loss/giou: 0.28292  ,  Loss/l1: 0.03203  ,  Loss/location: 3.28710  ,  IoU: 0.73996  ,  grad_norm: 16.13709  ,  mIoU: 0.74771  ,  mIoU10: 0.74893  ,  mIoU100: 0.76128
+[train: 1, 54 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.294 (34.791)  ,  ForwardTime: 7.701  ,  TotalTime: 44.786  ,  Loss/total: 0.58200  ,  Loss/giou: 0.29100  ,  Loss/l1: 0.03596  ,  Loss/location: 3.31864  ,  IoU: 0.73541  ,  grad_norm: 16.13709  ,  mIoU: 0.74255  ,  mIoU10: 0.74265  ,  mIoU100: 0.74684
+[train: 1, 54 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.078 (36.550)  ,  ForwardTime: 6.158  ,  TotalTime: 44.786  ,  Loss/total: 0.54266  ,  Loss/giou: 0.27133  ,  Loss/l1: 0.03182  ,  Loss/location: 3.23391  ,  IoU: 0.74990  ,  grad_norm: 16.13709  ,  mIoU: 0.75791  ,  mIoU10: 0.76184  ,  mIoU100: 0.76304
+[train: 1, 55 / 125] FPS: 5.7 (5.8)  ,  DataTime: 2.254 (34.794)  ,  ForwardTime: 7.723  ,  TotalTime: 44.770  ,  Loss/total: 0.58093  ,  Loss/giou: 0.29046  ,  Loss/l1: 0.03571  ,  Loss/location: 3.31922  ,  IoU: 0.73570  ,  grad_norm: 16.18573  ,  mIoU: 0.74270  ,  mIoU10: 0.74194  ,  mIoU100: 0.74677
+[train: 1, 55 / 125] FPS: 5.7 (5.8)  ,  DataTime: 2.042 (36.506)  ,  ForwardTime: 6.222  ,  TotalTime: 44.770  ,  Loss/total: 0.54452  ,  Loss/giou: 0.27226  ,  Loss/l1: 0.03191  ,  Loss/location: 3.24199  ,  IoU: 0.74885  ,  grad_norm: 16.18573  ,  mIoU: 0.75661  ,  mIoU10: 0.76125  ,  mIoU100: 0.76292
+[train: 1, 55 / 125] FPS: 5.7 (5.8)  ,  DataTime: 1.826 (37.404)  ,  ForwardTime: 5.540  ,  TotalTime: 44.770  ,  Loss/total: 0.56211  ,  Loss/giou: 0.28105  ,  Loss/l1: 0.03171  ,  Loss/location: 3.27727  ,  IoU: 0.74148  ,  grad_norm: 16.18573  ,  mIoU: 0.74941  ,  mIoU10: 0.74922  ,  mIoU100: 0.76106
+[train: 1, 55 / 125] FPS: 5.7 (5.8)  ,  DataTime: 2.160 (37.819)  ,  ForwardTime: 4.790  ,  TotalTime: 44.770  ,  Loss/total: 0.57188  ,  Loss/giou: 0.28594  ,  Loss/l1: 0.03638  ,  Loss/location: 3.35059  ,  IoU: 0.73933  ,  grad_norm: 16.18573  ,  mIoU: 0.74853  ,  mIoU10: 0.75316  ,  mIoU100: 0.75288
+[train: 1, 56 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.215 (34.804)  ,  ForwardTime: 7.712  ,  TotalTime: 44.731  ,  Loss/total: 0.58309  ,  Loss/giou: 0.29154  ,  Loss/l1: 0.03585  ,  Loss/location: 3.32385  ,  IoU: 0.73474  ,  grad_norm: 16.18853  ,  mIoU: 0.74155  ,  mIoU10: 0.74144  ,  mIoU100: 0.74668
+[train: 1, 56 / 125] FPS: 5.7 (6.0)  ,  DataTime: 1.860 (37.402)  ,  ForwardTime: 5.469  ,  TotalTime: 44.731  ,  Loss/total: 0.56256  ,  Loss/giou: 0.28128  ,  Loss/l1: 0.03178  ,  Loss/location: 3.27928  ,  IoU: 0.74115  ,  grad_norm: 16.18853  ,  mIoU: 0.74891  ,  mIoU10: 0.74949  ,  mIoU100: 0.76084
+[train: 1, 56 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.007 (36.479)  ,  ForwardTime: 6.244  ,  TotalTime: 44.731  ,  Loss/total: 0.54315  ,  Loss/giou: 0.27158  ,  Loss/l1: 0.03167  ,  Loss/location: 3.23784  ,  IoU: 0.74930  ,  grad_norm: 16.18853  ,  mIoU: 0.75702  ,  mIoU10: 0.76060  ,  mIoU100: 0.76281
+[train: 1, 56 / 125] FPS: 5.7 (6.0)  ,  DataTime: 2.123 (37.750)  ,  ForwardTime: 4.858  ,  TotalTime: 44.731  ,  Loss/total: 0.57329  ,  Loss/giou: 0.28665  ,  Loss/l1: 0.03652  ,  Loss/location: 3.35675  ,  IoU: 0.73863  ,  grad_norm: 16.18853  ,  mIoU: 0.74756  ,  mIoU10: 0.75273  ,  mIoU100: 0.75279
+[train: 1, 57 / 125] FPS: 5.7 (6.2)  ,  DataTime: 2.087 (37.785)  ,  ForwardTime: 4.800  ,  TotalTime: 44.672  ,  Loss/total: 0.57711  ,  Loss/giou: 0.28856  ,  Loss/l1: 0.03695  ,  Loss/location: 3.36371  ,  IoU: 0.73723  ,  grad_norm: 16.17828  ,  mIoU: 0.74623  ,  mIoU10: 0.75215  ,  mIoU100: 0.75267
+[train: 1, 57 / 125] FPS: 5.7 (6.2)  ,  DataTime: 2.178 (34.715)  ,  ForwardTime: 7.779  ,  TotalTime: 44.672  ,  Loss/total: 0.58174  ,  Loss/giou: 0.29087  ,  Loss/l1: 0.03564  ,  Loss/location: 3.32218  ,  IoU: 0.73511  ,  grad_norm: 16.17828  ,  mIoU: 0.74195  ,  mIoU10: 0.74119  ,  mIoU100: 0.74659
+[train: 1, 57 / 125] FPS: 5.7 (6.2)  ,  DataTime: 1.973 (36.449)  ,  ForwardTime: 6.250  ,  TotalTime: 44.672  ,  Loss/total: 0.54687  ,  Loss/giou: 0.27344  ,  Loss/l1: 0.03211  ,  Loss/location: 3.24833  ,  IoU: 0.74776  ,  grad_norm: 16.17828  ,  mIoU: 0.75537  ,  mIoU10: 0.76013  ,  mIoU100: 0.76268
+[train: 1, 57 / 125] FPS: 5.7 (6.2)  ,  DataTime: 1.829 (37.335)  ,  ForwardTime: 5.508  ,  TotalTime: 44.672  ,  Loss/total: 0.56062  ,  Loss/giou: 0.28031  ,  Loss/l1: 0.03150  ,  Loss/location: 3.27630  ,  IoU: 0.74187  ,  grad_norm: 16.17828  ,  mIoU: 0.74967  ,  mIoU10: 0.75003  ,  mIoU100: 0.76065
+[train: 1, 58 / 125] FPS: 5.7 (6.8)  ,  DataTime: 2.142 (34.732)  ,  ForwardTime: 7.673  ,  TotalTime: 44.548  ,  Loss/total: 0.58112  ,  Loss/giou: 0.29056  ,  Loss/l1: 0.03551  ,  Loss/location: 3.31994  ,  IoU: 0.73530  ,  grad_norm: 16.13269  ,  mIoU: 0.74212  ,  mIoU10: 0.74101  ,  mIoU100: 0.74652
+[train: 1, 58 / 125] FPS: 5.7 (6.8)  ,  DataTime: 1.940 (36.438)  ,  ForwardTime: 6.169  ,  TotalTime: 44.548  ,  Loss/total: 0.54355  ,  Loss/giou: 0.27178  ,  Loss/l1: 0.03179  ,  Loss/location: 3.24030  ,  IoU: 0.74912  ,  grad_norm: 16.13269  ,  mIoU: 0.75660  ,  mIoU10: 0.75995  ,  mIoU100: 0.76258
+[train: 1, 58 / 125] FPS: 5.7 (6.8)  ,  DataTime: 1.799 (37.282)  ,  ForwardTime: 5.467  ,  TotalTime: 44.548  ,  Loss/total: 0.55558  ,  Loss/giou: 0.27779  ,  Loss/l1: 0.03111  ,  Loss/location: 3.26144  ,  IoU: 0.74405  ,  grad_norm: 16.13269  ,  mIoU: 0.75192  ,  mIoU10: 0.75066  ,  mIoU100: 0.76050
+[train: 1, 58 / 125] FPS: 5.7 (6.8)  ,  DataTime: 2.052 (37.716)  ,  ForwardTime: 4.779  ,  TotalTime: 44.547  ,  Loss/total: 0.57573  ,  Loss/giou: 0.28787  ,  Loss/l1: 0.03669  ,  Loss/location: 3.35955  ,  IoU: 0.73774  ,  grad_norm: 16.13269  ,  mIoU: 0.74685  ,  mIoU10: 0.75149  ,  mIoU100: 0.75257
+[train: 1, 59 / 125] FPS: 5.8 (6.7)  ,  DataTime: 2.107 (34.706)  ,  ForwardTime: 7.628  ,  TotalTime: 44.441  ,  Loss/total: 0.58310  ,  Loss/giou: 0.29155  ,  Loss/l1: 0.03547  ,  Loss/location: 3.32387  ,  IoU: 0.73432  ,  grad_norm: 16.25541  ,  mIoU: 0.74120  ,  mIoU10: 0.74076  ,  mIoU100: 0.74643
+[train: 1, 59 / 125] FPS: 5.8 (6.7)  ,  DataTime: 1.770 (37.224)  ,  ForwardTime: 5.447  ,  TotalTime: 44.441  ,  Loss/total: 0.56041  ,  Loss/giou: 0.28021  ,  Loss/l1: 0.03120  ,  Loss/location: 3.26732  ,  IoU: 0.74194  ,  grad_norm: 16.25541  ,  mIoU: 0.74981  ,  mIoU10: 0.75106  ,  mIoU100: 0.76032
+[train: 1, 59 / 125] FPS: 5.8 (6.7)  ,  DataTime: 1.909 (36.441)  ,  ForwardTime: 6.091  ,  TotalTime: 44.441  ,  Loss/total: 0.54721  ,  Loss/giou: 0.27360  ,  Loss/l1: 0.03177  ,  Loss/location: 3.25011  ,  IoU: 0.74749  ,  grad_norm: 16.25541  ,  mIoU: 0.75483  ,  mIoU10: 0.75943  ,  mIoU100: 0.76245
+[train: 1, 59 / 125] FPS: 5.8 (6.7)  ,  DataTime: 2.018 (37.683)  ,  ForwardTime: 4.740  ,  TotalTime: 44.441  ,  Loss/total: 0.57794  ,  Loss/giou: 0.28897  ,  Loss/l1: 0.03708  ,  Loss/location: 3.36665  ,  IoU: 0.73695  ,  grad_norm: 16.25541  ,  mIoU: 0.74589  ,  mIoU10: 0.75065  ,  mIoU100: 0.75246
+[train: 1, 60 / 125] FPS: 5.8 (6.4)  ,  DataTime: 1.985 (37.692)  ,  ForwardTime: 4.688  ,  TotalTime: 44.365  ,  Loss/total: 0.57264  ,  Loss/giou: 0.28632  ,  Loss/l1: 0.03662  ,  Loss/location: 3.35085  ,  IoU: 0.73921  ,  grad_norm: 16.20708  ,  mIoU: 0.74813  ,  mIoU10: 0.74996  ,  mIoU100: 0.75239
+[train: 1, 60 / 125] FPS: 5.8 (6.4)  ,  DataTime: 1.742 (37.241)  ,  ForwardTime: 5.383  ,  TotalTime: 44.365  ,  Loss/total: 0.56016  ,  Loss/giou: 0.28008  ,  Loss/l1: 0.03138  ,  Loss/location: 3.26737  ,  IoU: 0.74220  ,  grad_norm: 16.20708  ,  mIoU: 0.75003  ,  mIoU10: 0.75133  ,  mIoU100: 0.76015
+[train: 1, 60 / 125] FPS: 5.8 (6.4)  ,  DataTime: 1.879 (36.377)  ,  ForwardTime: 6.110  ,  TotalTime: 44.366  ,  Loss/total: 0.55200  ,  Loss/giou: 0.27600  ,  Loss/l1: 0.03207  ,  Loss/location: 3.26695  ,  IoU: 0.74541  ,  grad_norm: 16.20708  ,  mIoU: 0.75250  ,  mIoU10: 0.75874  ,  mIoU100: 0.76228
+[train: 1, 60 / 125] FPS: 5.8 (6.4)  ,  DataTime: 2.075 (34.695)  ,  ForwardTime: 7.596  ,  TotalTime: 44.365  ,  Loss/total: 0.58639  ,  Loss/giou: 0.29320  ,  Loss/l1: 0.03685  ,  Loss/location: 3.33537  ,  IoU: 0.73363  ,  grad_norm: 16.20708  ,  mIoU: 0.74039  ,  mIoU10: 0.74045  ,  mIoU100: 0.74633
+[train: 1, 61 / 125] FPS: 5.7 (4.3)  ,  DataTime: 2.390 (34.667)  ,  ForwardTime: 7.567  ,  TotalTime: 44.623  ,  Loss/total: 0.58569  ,  Loss/giou: 0.29284  ,  Loss/l1: 0.03655  ,  Loss/location: 3.33068  ,  IoU: 0.73373  ,  grad_norm: 16.27678  ,  mIoU: 0.74030  ,  mIoU10: 0.74020  ,  mIoU100: 0.74623
+[train: 1, 61 / 125] FPS: 5.7 (4.3)  ,  DataTime: 2.021 (36.379)  ,  ForwardTime: 6.223  ,  TotalTime: 44.623  ,  Loss/total: 0.55141  ,  Loss/giou: 0.27570  ,  Loss/l1: 0.03189  ,  Loss/location: 3.26558  ,  IoU: 0.74551  ,  grad_norm: 16.27678  ,  mIoU: 0.75264  ,  mIoU10: 0.75790  ,  mIoU100: 0.76212
+[train: 1, 61 / 125] FPS: 5.7 (4.3)  ,  DataTime: 1.747 (37.161)  ,  ForwardTime: 5.715  ,  TotalTime: 44.623  ,  Loss/total: 0.56250  ,  Loss/giou: 0.28125  ,  Loss/l1: 0.03160  ,  Loss/location: 3.27214  ,  IoU: 0.74119  ,  grad_norm: 16.27678  ,  mIoU: 0.74899  ,  mIoU10: 0.75144  ,  mIoU100: 0.75996
+[train: 1, 61 / 125] FPS: 5.7 (4.3)  ,  DataTime: 2.290 (37.696)  ,  ForwardTime: 4.637  ,  TotalTime: 44.623  ,  Loss/total: 0.58059  ,  Loss/giou: 0.29029  ,  Loss/l1: 0.03819  ,  Loss/location: 3.37395  ,  IoU: 0.73646  ,  grad_norm: 16.27678  ,  mIoU: 0.74529  ,  mIoU10: 0.74909  ,  mIoU100: 0.75227
+[train: 1, 62 / 125] FPS: 5.7 (6.1)  ,  DataTime: 1.720 (37.088)  ,  ForwardTime: 5.773  ,  TotalTime: 44.581  ,  Loss/total: 0.56297  ,  Loss/giou: 0.28148  ,  Loss/l1: 0.03145  ,  Loss/location: 3.28667  ,  IoU: 0.74075  ,  grad_norm: 16.31142  ,  mIoU: 0.74817  ,  mIoU10: 0.75152  ,  mIoU100: 0.75977
+[train: 1, 62 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.352 (34.648)  ,  ForwardTime: 7.581  ,  TotalTime: 44.581  ,  Loss/total: 0.58339  ,  Loss/giou: 0.29169  ,  Loss/l1: 0.03624  ,  Loss/location: 3.32458  ,  IoU: 0.73456  ,  grad_norm: 16.31142  ,  mIoU: 0.74112  ,  mIoU10: 0.74001  ,  mIoU100: 0.74614
+[train: 1, 62 / 125] FPS: 5.7 (6.1)  ,  DataTime: 1.990 (36.344)  ,  ForwardTime: 6.247  ,  TotalTime: 44.581  ,  Loss/total: 0.55332  ,  Loss/giou: 0.27666  ,  Loss/l1: 0.03182  ,  Loss/location: 3.26843  ,  IoU: 0.74459  ,  grad_norm: 16.31142  ,  mIoU: 0.75174  ,  mIoU10: 0.75706  ,  mIoU100: 0.76196
+[train: 1, 62 / 125] FPS: 5.7 (6.1)  ,  DataTime: 2.255 (37.739)  ,  ForwardTime: 4.587  ,  TotalTime: 44.581  ,  Loss/total: 0.57894  ,  Loss/giou: 0.28947  ,  Loss/l1: 0.03789  ,  Loss/location: 3.36723  ,  IoU: 0.73699  ,  grad_norm: 16.31142  ,  mIoU: 0.74572  ,  mIoU10: 0.74836  ,  mIoU100: 0.75217
+[train: 1, 63 / 125] FPS: 5.8 (6.5)  ,  DataTime: 2.317 (34.612)  ,  ForwardTime: 7.565  ,  TotalTime: 44.494  ,  Loss/total: 0.58779  ,  Loss/giou: 0.29390  ,  Loss/l1: 0.03662  ,  Loss/location: 3.33483  ,  IoU: 0.73278  ,  grad_norm: 16.33409  ,  mIoU: 0.73944  ,  mIoU10: 0.73962  ,  mIoU100: 0.74604[train: 1, 63 / 125] FPS: 5.8 (6.5)  ,  DataTime: 1.717 (37.070)  ,  ForwardTime: 5.706  ,  TotalTime: 44.494  ,  Loss/total: 0.56022  ,  Loss/giou: 0.28011  ,  Loss/l1: 0.03116  ,  Loss/location: 3.27938  ,  IoU: 0.74186  ,  grad_norm: 16.33409  ,  mIoU: 0.74936  ,  mIoU10: 0.75173  ,  mIoU100: 0.75961
+
+[train: 1, 63 / 125] FPS: 5.8 (6.5)  ,  DataTime: 1.960 (36.337)  ,  ForwardTime: 6.196  ,  TotalTime: 44.494  ,  Loss/total: 0.55209  ,  Loss/giou: 0.27604  ,  Loss/l1: 0.03157  ,  Loss/location: 3.26245  ,  IoU: 0.74502  ,  grad_norm: 16.33409  ,  mIoU: 0.75239  ,  mIoU10: 0.75637  ,  mIoU100: 0.76180
+[train: 1, 63 / 125] FPS: 5.8 (6.5)  ,  DataTime: 2.221 (37.680)  ,  ForwardTime: 4.593  ,  TotalTime: 44.494  ,  Loss/total: 0.57623  ,  Loss/giou: 0.28812  ,  Loss/l1: 0.03758  ,  Loss/location: 3.36119  ,  IoU: 0.73804  ,  grad_norm: 16.33409  ,  mIoU: 0.74648  ,  mIoU10: 0.74785  ,  mIoU100: 0.75208
+[train: 1, 64 / 125] FPS: 5.8 (6.4)  ,  DataTime: 2.282 (34.609)  ,  ForwardTime: 7.530  ,  TotalTime: 44.421  ,  Loss/total: 0.58615  ,  Loss/giou: 0.29307  ,  Loss/l1: 0.03647  ,  Loss/location: 3.32881  ,  IoU: 0.73351  ,  grad_norm: 16.32468  ,  mIoU: 0.74027  ,  mIoU10: 0.73943  ,  mIoU100: 0.74595
+[train: 1, 64 / 125] FPS: 5.8 (6.4)  ,  DataTime: 2.022 (36.276)  ,  ForwardTime: 6.123  ,  TotalTime: 44.421  ,  Loss/total: 0.55163  ,  Loss/giou: 0.27581  ,  Loss/l1: 0.03141  ,  Loss/location: 3.26370  ,  IoU: 0.74504  ,  grad_norm: 16.32468  ,  mIoU: 0.75183  ,  mIoU10: 0.75579  ,  mIoU100: 0.76165
+[train: 1, 64 / 125] FPS: 5.8 (6.4)  ,  DataTime: 1.721 (37.044)  ,  ForwardTime: 5.656  ,  TotalTime: 44.421  ,  Loss/total: 0.56552  ,  Loss/giou: 0.28276  ,  Loss/l1: 0.03147  ,  Loss/location: 3.29182  ,  IoU: 0.73959  ,  grad_norm: 16.32468  ,  mIoU: 0.74720  ,  mIoU10: 0.75161  ,  mIoU100: 0.75941
+[train: 1, 64 / 125] FPS: 5.8 (6.4)  ,  DataTime: 2.187 (37.658)  ,  ForwardTime: 4.576  ,  TotalTime: 44.421  ,  Loss/total: 0.57579  ,  Loss/giou: 0.28790  ,  Loss/l1: 0.03738  ,  Loss/location: 3.35871  ,  IoU: 0.73809  ,  grad_norm: 16.32468  ,  mIoU: 0.74652  ,  mIoU10: 0.74741  ,  mIoU100: 0.75199
+[train: 1, 65 / 125] FPS: 5.8 (6.0)  ,  DataTime: 2.155 (37.587)  ,  ForwardTime: 4.655  ,  TotalTime: 44.397  ,  Loss/total: 0.57558  ,  Loss/giou: 0.28779  ,  Loss/l1: 0.03724  ,  Loss/location: 3.35844  ,  IoU: 0.73812  ,  grad_norm: 16.25258  ,  mIoU: 0.74650  ,  mIoU10: 0.74723  ,  mIoU100: 0.75191
+[train: 1, 65 / 125] FPS: 5.8 (6.0)  ,  DataTime: 2.248 (34.607)  ,  ForwardTime: 7.542  ,  TotalTime: 44.397  ,  Loss/total: 0.58901  ,  Loss/giou: 0.29450  ,  Loss/l1: 0.03734  ,  Loss/location: 3.33988  ,  IoU: 0.73267  ,  grad_norm: 16.25258  ,  mIoU: 0.73913  ,  mIoU10: 0.73913  ,  mIoU100: 0.74584
+[train: 1, 65 / 125] FPS: 5.8 (6.0)  ,  DataTime: 2.067 (36.276)  ,  ForwardTime: 6.054  ,  TotalTime: 44.397  ,  Loss/total: 0.55022  ,  Loss/giou: 0.27511  ,  Loss/l1: 0.03120  ,  Loss/location: 3.26035  ,  IoU: 0.74561  ,  grad_norm: 16.25258  ,  mIoU: 0.75245  ,  mIoU10: 0.75539  ,  mIoU100: 0.76151
+[train: 1, 65 / 125] FPS: 5.8 (6.0)  ,  DataTime: 1.713 (37.033)  ,  ForwardTime: 5.651  ,  TotalTime: 44.397  ,  Loss/total: 0.56126  ,  Loss/giou: 0.28063  ,  Loss/l1: 0.03115  ,  Loss/location: 3.27945  ,  IoU: 0.74142  ,  grad_norm: 16.25258  ,  mIoU: 0.74904  ,  mIoU10: 0.75154  ,  mIoU100: 0.75925
+Killed

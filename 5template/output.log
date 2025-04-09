@@ -1,0 +1,266 @@
+nohup: ignoring input
+/home/baiyifan/anaconda3/envs/artrack1/lib/python3.9/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+WARNING:torch.distributed.run:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+script_name: artrackv2.py  config_name: artrackv2_tiny_256.yaml
+script_name: artrackv2.py  config_name: artrackv2_tiny_256.yamlscript_name: artrackv2.py  config_name: artrackv2_tiny_256.yaml
+
+script_name: artrackv2.py  config_name: artrackv2_tiny_256.yaml
+i use vit_large
+i use vit_large
+New configuration is shown below.
+MODEL configuration: {'PRETRAIN_FILE': 'mae_tiny_distill_400e.pth.tar', 'PRETRAIN_PTH': '', 'EXTRA_MERGER': False, 'RETURN_INTER': False, 'RETURN_STAGES': [2, 5, 8, 11], 'BACKBONE': {'TYPE': 'vit_tiny_patch16_224', 'STRIDE': 16, 'MID_PE': False, 'SEP_SEG': False, 'CAT_MODE': 'direct', 'MERGE_LAYER': 0, 'ADD_CLS_TOKEN': False, 'CLS_TOKEN_USE_MODE': 'ignore', 'CE_LOC': [], 'CE_KEEP_RATIO': [], 'CE_TEMPLATE_RANGE': 'ALL'}, 'BINS': 300, 'RANGE': 2, 'EXTENSION': 3, 'ENCODER_LAYER': 3, 'NUM_HEADS': 12, 'MLP_RATIO': 4, 'QKV_BIAS': True, 'DROP_RATE': 0.1, 'ATTN_DROP': 0.0, 'DROP_PATH': 0.0, 'DECODER_LAYER': 6, 'HEAD': {'TYPE': 'PIX', 'NUM_CHANNELS': 768}}
+
+
+TRAIN configuration: {'LR': 0.0004, 'WEIGHT_DECAY': 0.0001, 'EPOCH': 120, 'LR_DROP_EPOCH': 96, 'BATCH_SIZE': 32, 'NUM_WORKER': 10, 'OPTIMIZER': 'ADAMW', 'BACKBONE_MULTIPLIER': 0.1, 'GIOU_WEIGHT': 2.0, 'L1_WEIGHT': 0.0, 'SCORE_WEIGHT': 0.0, 'FREEZE_LAYERS': [0], 'PRINT_INTERVAL': 600, 'VAL_EPOCH_INTERVAL': 20, 'GRAD_CLIP_NORM': 0.1, 'AMP': False, 'CE_START_EPOCH': 20, 'CE_WARM_EPOCH': 80, 'DROP_PATH_RATE': 0.1, 'SCHEDULER': {'TYPE': 'step', 'DECAY_RATE': 0.1}}
+
+
+DATA configuration: {'SAMPLER_MODE': 'causal', 'MEAN': [0.485, 0.456, 0.406], 'STD': [0.229, 0.224, 0.225], 'MAX_SAMPLE_INTERVAL': 200, 'TRAIN': {'DATASETS_NAME': ['GOT10K_train_full'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 76800}, 'VAL': {'DATASETS_NAME': ['GOT10K_votval'], 'DATASETS_RATIO': [1], 'SAMPLE_PER_EPOCH': 10000}, 'SEARCH': {'SIZE': 224, 'FACTOR': 4.0, 'CENTER_JITTER': 3.0, 'SCALE_JITTER': 0.25, 'NUMBER': 1}, 'TEMPLATE': {'NUMBER': 5, 'SIZE': 112, 'FACTOR': 2.0, 'CENTER_JITTER': 0, 'SCALE_JITTER': 0}}
+
+
+TEST configuration: {'TEMPLATE_FACTOR': 2.0, 'TEMPLATE_SIZE': 112, 'SEARCH_FACTOR': 4.0, 'SEARCH_SIZE': 224, 'EPOCH': 105}
+
+
+i use vit_large
+i use vit_large
+['output_bias', 'word_embeddings.weight', 'position_embeddings.weight']
+['mask_token', 'decoder_pos_embed', 'decoder_embed.weight', 'decoder_embed.bias', 'decoder_blocks.0.norm1.weight', 'decoder_blocks.0.norm1.bias', 'decoder_blocks.0.attn.qkv.weight', 'decoder_blocks.0.attn.qkv.bias', 'decoder_blocks.0.attn.proj.weight', 'decoder_blocks.0.attn.proj.bias', 'decoder_blocks.0.norm2.weight', 'decoder_blocks.0.norm2.bias', 'decoder_blocks.0.mlp.fc1.weight', 'decoder_blocks.0.mlp.fc1.bias', 'decoder_blocks.0.mlp.fc2.weight', 'decoder_blocks.0.mlp.fc2.bias', 'decoder_norm.weight', 'decoder_norm.bias', 'decoder_pred.weight', 'decoder_pred.bias']
+Load pretrained model from: /home/baiyifan/tiny/4template/lib/models/artrackv2/../../../pretrained_models/mae_tiny_distill_400e.pth.tar
+sampler_mode causal
+['output_bias', 'word_embeddings.weight', 'position_embeddings.weight']
+['mask_token', 'decoder_pos_embed', 'decoder_embed.weight', 'decoder_embed.bias', 'decoder_blocks.0.norm1.weight', 'decoder_blocks.0.norm1.bias', 'decoder_blocks.0.attn.qkv.weight', 'decoder_blocks.0.attn.qkv.bias', 'decoder_blocks.0.attn.proj.weight', 'decoder_blocks.0.attn.proj.bias', 'decoder_blocks.0.norm2.weight', 'decoder_blocks.0.norm2.bias', 'decoder_blocks.0.mlp.fc1.weight', 'decoder_blocks.0.mlp.fc1.bias', 'decoder_blocks.0.mlp.fc2.weight', 'decoder_blocks.0.mlp.fc2.bias', 'decoder_norm.weight', 'decoder_norm.bias', 'decoder_pred.weight', 'decoder_pred.bias']
+Load pretrained model from: /home/baiyifan/tiny/4template/lib/models/artrackv2/../../../pretrained_models/mae_tiny_distill_400e.pth.tar
+sampler_mode causal
+['output_bias', 'word_embeddings.weight', 'position_embeddings.weight']
+['mask_token', 'decoder_pos_embed', 'decoder_embed.weight', 'decoder_embed.bias', 'decoder_blocks.0.norm1.weight', 'decoder_blocks.0.norm1.bias', 'decoder_blocks.0.attn.qkv.weight', 'decoder_blocks.0.attn.qkv.bias', 'decoder_blocks.0.attn.proj.weight', 'decoder_blocks.0.attn.proj.bias', 'decoder_blocks.0.norm2.weight', 'decoder_blocks.0.norm2.bias', 'decoder_blocks.0.mlp.fc1.weight', 'decoder_blocks.0.mlp.fc1.bias', 'decoder_blocks.0.mlp.fc2.weight', 'decoder_blocks.0.mlp.fc2.bias', 'decoder_norm.weight', 'decoder_norm.bias', 'decoder_pred.weight', 'decoder_pred.bias']
+Load pretrained model from: /home/baiyifan/tiny/4template/lib/models/artrackv2/../../../pretrained_models/mae_tiny_distill_400e.pth.tar
+['output_bias', 'word_embeddings.weight', 'position_embeddings.weight']
+['mask_token', 'decoder_pos_embed', 'decoder_embed.weight', 'decoder_embed.bias', 'decoder_blocks.0.norm1.weight', 'decoder_blocks.0.norm1.bias', 'decoder_blocks.0.attn.qkv.weight', 'decoder_blocks.0.attn.qkv.bias', 'decoder_blocks.0.attn.proj.weight', 'decoder_blocks.0.attn.proj.bias', 'decoder_blocks.0.norm2.weight', 'decoder_blocks.0.norm2.bias', 'decoder_blocks.0.mlp.fc1.weight', 'decoder_blocks.0.mlp.fc1.bias', 'decoder_blocks.0.mlp.fc2.weight', 'decoder_blocks.0.mlp.fc2.bias', 'decoder_norm.weight', 'decoder_norm.bias', 'decoder_pred.weight', 'decoder_pred.bias']
+Load pretrained model from: /home/baiyifan/tiny/4template/lib/models/artrackv2/../../../pretrained_models/mae_tiny_distill_400e.pth.tar
+sampler_mode causal
+sampler_mode causal
+pin_memory is True
+pin_memory is True
+pin_memory is True
+pin_memory is True
+pin_memory is True
+pin_memory is True
+pin_memory is True
+pin_memory is True
+Learnable parameters are shown below.
+module.identity
+module.backbone.output_bias
+module.backbone.cls_token
+module.backbone.pos_embed
+module.backbone.pos_embed_z0
+module.backbone.pos_embed_z1
+module.backbone.pos_embed_x
+module.backbone.word_embeddings.weight
+module.backbone.position_embeddings.weight
+module.backbone.patch_embed.proj.weight
+module.backbone.patch_embed.proj.bias
+module.backbone.blocks.0.norm1.weight
+module.backbone.blocks.0.norm1.bias
+module.backbone.blocks.0.attn.qkv.weight
+module.backbone.blocks.0.attn.qkv.bias
+module.backbone.blocks.0.attn.proj.weight
+module.backbone.blocks.0.attn.proj.bias
+module.backbone.blocks.0.norm2.weight
+module.backbone.blocks.0.norm2.bias
+module.backbone.blocks.0.mlp.fc1.weight
+module.backbone.blocks.0.mlp.fc1.bias
+module.backbone.blocks.0.mlp.fc2.weight
+module.backbone.blocks.0.mlp.fc2.bias
+module.backbone.blocks.1.norm1.weight
+module.backbone.blocks.1.norm1.bias
+module.backbone.blocks.1.attn.qkv.weight
+module.backbone.blocks.1.attn.qkv.bias
+module.backbone.blocks.1.attn.proj.weight
+module.backbone.blocks.1.attn.proj.bias
+module.backbone.blocks.1.norm2.weight
+module.backbone.blocks.1.norm2.bias
+module.backbone.blocks.1.mlp.fc1.weight
+module.backbone.blocks.1.mlp.fc1.bias
+module.backbone.blocks.1.mlp.fc2.weight
+module.backbone.blocks.1.mlp.fc2.bias
+module.backbone.blocks.2.norm1.weight
+module.backbone.blocks.2.norm1.bias
+module.backbone.blocks.2.attn.qkv.weight
+module.backbone.blocks.2.attn.qkv.bias
+module.backbone.blocks.2.attn.proj.weight
+module.backbone.blocks.2.attn.proj.bias
+module.backbone.blocks.2.norm2.weight
+module.backbone.blocks.2.norm2.bias
+module.backbone.blocks.2.mlp.fc1.weight
+module.backbone.blocks.2.mlp.fc1.bias
+module.backbone.blocks.2.mlp.fc2.weight
+module.backbone.blocks.2.mlp.fc2.bias
+module.backbone.blocks.3.norm1.weight
+module.backbone.blocks.3.norm1.bias
+module.backbone.blocks.3.attn.qkv.weight
+checkpoints will be saved to /home/baiyifan/output/artrackv2_tiny_224_mae_distill/checkpointsmodule.backbone.blocks.3.attn.qkv.bias
+
+module.backbone.blocks.3.attn.proj.weight
+module.backbone.blocks.3.attn.proj.bias
+module.backbone.blocks.3.norm2.weight
+module.backbone.blocks.3.norm2.bias
+module.backbone.blocks.3.mlp.fc1.weight
+module.backbone.blocks.3.mlp.fc1.bias
+module.backbone.blocks.3.mlp.fc2.weight
+module.backbone.blocks.3.mlp.fc2.bias
+module.backbone.blocks.4.norm1.weight
+module.backbone.blocks.4.norm1.bias
+module.backbone.blocks.4.attn.qkv.weight
+module.backbone.blocks.4.attn.qkv.bias
+module.backbone.blocks.4.attn.proj.weight
+module.backbone.blocks.4.attn.proj.bias
+module.backbone.blocks.4.norm2.weight
+module.backbone.blocks.4.norm2.bias
+module.backbone.blocks.4.mlp.fc1.weightcheckpoints will be saved to /home/baiyifan/output/artrackv2_tiny_224_mae_distill/checkpoints
+
+module.backbone.blocks.4.mlp.fc1.bias
+module.backbone.blocks.4.mlp.fc2.weight
+module.backbone.blocks.4.mlp.fc2.bias
+module.backbone.blocks.5.norm1.weight
+module.backbone.blocks.5.norm1.bias
+module.backbone.blocks.5.attn.qkv.weight
+module.backbone.blocks.5.attn.qkv.bias
+module.backbone.blocks.5.attn.proj.weight
+module.backbone.blocks.5.attn.proj.bias
+module.backbone.blocks.5.norm2.weight
+module.backbone.blocks.5.norm2.bias
+module.backbone.blocks.5.mlp.fc1.weight
+module.backbone.blocks.5.mlp.fc1.bias
+module.backbone.blocks.5.mlp.fc2.weight
+module.backbone.blocks.5.mlp.fc2.bias
+module.backbone.blocks.6.norm1.weight
+module.backbone.blocks.6.norm1.bias
+module.backbone.blocks.6.attn.qkv.weight
+module.backbone.blocks.6.attn.qkv.bias
+module.backbone.blocks.6.attn.proj.weight
+module.backbone.blocks.6.attn.proj.bias
+module.backbone.blocks.6.norm2.weight
+module.backbone.blocks.6.norm2.bias
+module.backbone.blocks.6.mlp.fc1.weight
+module.backbone.blocks.6.mlp.fc1.bias
+module.backbone.blocks.6.mlp.fc2.weight
+module.backbone.blocks.6.mlp.fc2.bias
+module.backbone.blocks.7.norm1.weight
+module.backbone.blocks.7.norm1.bias
+module.backbone.blocks.7.attn.qkv.weight
+module.backbone.blocks.7.attn.qkv.bias
+module.backbone.blocks.7.attn.proj.weight
+module.backbone.blocks.7.attn.proj.bias
+module.backbone.blocks.7.norm2.weight
+module.backbone.blocks.7.norm2.bias
+module.backbone.blocks.7.mlp.fc1.weight
+module.backbone.blocks.7.mlp.fc1.bias
+module.backbone.blocks.7.mlp.fc2.weight
+module.backbone.blocks.7.mlp.fc2.bias
+module.backbone.blocks.8.norm1.weight
+module.backbone.blocks.8.norm1.bias
+module.backbone.blocks.8.attn.qkv.weight
+module.backbone.blocks.8.attn.qkv.bias
+module.backbone.blocks.8.attn.proj.weight
+module.backbone.blocks.8.attn.proj.bias
+module.backbone.blocks.8.norm2.weight
+module.backbone.blocks.8.norm2.bias
+module.backbone.blocks.8.mlp.fc1.weight
+module.backbone.blocks.8.mlp.fc1.bias
+module.backbone.blocks.8.mlp.fc2.weight
+module.backbone.blocks.8.mlp.fc2.bias
+module.backbone.blocks.9.norm1.weight
+module.backbone.blocks.9.norm1.bias
+module.backbone.blocks.9.attn.qkv.weight
+module.backbone.blocks.9.attn.qkv.bias
+module.backbone.blocks.9.attn.proj.weight
+module.backbone.blocks.9.attn.proj.bias
+module.backbone.blocks.9.norm2.weight
+module.backbone.blocks.9.norm2.bias
+module.backbone.blocks.9.mlp.fc1.weight
+module.backbone.blocks.9.mlp.fc1.bias
+module.backbone.blocks.9.mlp.fc2.weight
+module.backbone.blocks.9.mlp.fc2.bias
+module.backbone.blocks.10.norm1.weight
+module.backbone.blocks.10.norm1.bias
+module.backbone.blocks.10.attn.qkv.weight
+module.backbone.blocks.10.attn.qkv.bias
+module.backbone.blocks.10.attn.proj.weight
+module.backbone.blocks.10.attn.proj.bias
+module.backbone.blocks.10.norm2.weight
+module.backbone.blocks.10.norm2.bias
+module.backbone.blocks.10.mlp.fc1.weight
+module.backbone.blocks.10.mlp.fc1.bias
+module.backbone.blocks.10.mlp.fc2.weight
+module.backbone.blocks.10.mlp.fc2.bias
+module.backbone.blocks.11.norm1.weight
+module.backbone.blocks.11.norm1.bias
+module.backbone.blocks.11.attn.qkv.weight
+module.backbone.blocks.11.attn.qkv.bias
+module.backbone.blocks.11.attn.proj.weight
+module.backbone.blocks.11.attn.proj.bias
+module.backbone.blocks.11.norm2.weight
+module.backbone.blocks.11.norm2.bias
+module.backbone.blocks.11.mlp.fc1.weight
+module.backbone.blocks.11.mlp.fc1.bias
+module.backbone.blocks.11.mlp.fc2.weight
+module.backbone.blocks.11.mlp.fc2.bias
+module.backbone.extension.0.norm1.weight
+module.backbone.extension.0.norm1.bias
+module.backbone.extension.0.attn.qkv.weight
+module.backbone.extension.0.attn.qkv.bias
+module.backbone.extension.0.attn.proj.weight
+module.backbone.extension.0.attn.proj.bias
+module.backbone.extension.0.norm2.weight
+module.backbone.extension.0.norm2.bias
+module.backbone.extension.0.mlp.fc1.weight
+module.backbone.extension.0.mlp.fc1.bias
+module.backbone.extension.0.mlp.fc2.weight
+module.backbone.extension.0.mlp.fc2.bias
+module.backbone.extension.1.norm1.weight
+module.backbone.extension.1.norm1.bias
+module.backbone.extension.1.attn.qkv.weight
+module.backbone.extension.1.attn.qkv.bias
+module.backbone.extension.1.attn.proj.weight
+module.backbone.extension.1.attn.proj.bias
+module.backbone.extension.1.norm2.weight
+module.backbone.extension.1.norm2.bias
+module.backbone.extension.1.mlp.fc1.weight
+module.backbone.extension.1.mlp.fc1.bias
+module.backbone.extension.1.mlp.fc2.weight
+module.backbone.extension.1.mlp.fc2.bias
+module.backbone.extension.2.norm1.weight
+module.backbone.extension.2.norm1.bias
+module.backbone.extension.2.attn.qkv.weight
+module.backbone.extension.2.attn.qkv.bias
+module.backbone.extension.2.attn.proj.weight
+module.backbone.extension.2.attn.proj.bias
+module.backbone.extension.2.norm2.weight
+module.backbone.extension.2.norm2.bias
+module.backbone.extension.2.mlp.fc1.weight
+module.backbone.extension.2.mlp.fc1.bias
+module.backbone.extension.2.mlp.fc2.weight
+module.backbone.extension.2.mlp.fc2.bias
+module.backbone.norm.weight
+module.backbone.norm.bias
+checkpoints will be saved to /home/baiyifan/output/artrackv2_tiny_224_mae_distill/checkpoints
+move_data True
+move_data True
+No matching checkpoint file found
+No matching checkpoint file found
+move_data True
+No matching checkpoint file found
+checkpoints will be saved to /home/baiyifan/output/artrackv2_tiny_224_mae_distill/checkpoints
+move_data True
+No matching checkpoint file found
+Killed
